@@ -1,22 +1,21 @@
-<div class="navbar-wrapper">
-    <nav class="navbar navbar-inverse navbar-static-top">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a href="/" class="pull-left"><img src="images/logo.png" width="48" height="48" alt="logo"></a>
-        <a class="navbar-brand" href="/">AchieveForGood</a>
-      </div>
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="achievements.php">View your Challenges</a></li>
-          <li><a href="sponsor.php">Make a Challenge</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
+<nav class="navbar navbar-inverse navbar-static-top">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a href="/" class="pull-left"><img src="images/logo.png" width="48" height="48" alt="logo"></a>
+    <a class="navbar-brand" href="/">AchieveForGood</a>
+  </div>
+  <div id="navbar" class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="achievements.php">View your Challenges</a></li>
+      <li><a href="sponsor.php">Make a Challenge</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
           <?php if (isset($_SESSION['steamID'])) { echo '<a href="user.php" class="pull-right"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" id="avatar" alt="avatar"></a>'; } ?>
           <li><?php
             if (isset($_SESSION['steamID']))
@@ -24,7 +23,6 @@
             else
               include 'login/signInButton.include.php';
           ?></li>
-        </ul>
-      </div>
-    </nav>
-</div>
+    </ul>
+  </div>
+</nav>
