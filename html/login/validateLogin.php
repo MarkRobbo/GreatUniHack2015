@@ -97,6 +97,9 @@
 						// Store avatar and name
 						$_SESSION['name'] = $playerSummary['response']['players'][0]['personaname'];
 						$_SESSION['avatar'] = $playerSummary['response']['players'][0]['avatarfull'];
+
+						// Now we need to redirect back
+						header('location: /');
 					}
 				}
 
