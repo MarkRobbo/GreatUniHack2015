@@ -42,7 +42,8 @@
       <div id="player_details" class="row hidden">
         <h5 class="col-md-12">
           Now, specify exactly what your player should achieve to
-          receive your donation, and what you would like to donate to.
+          receive your donation. The game and charity are chosen by
+          the player, but you can review them here.
         </h5>
 
         <div class="col-md-12">
@@ -66,6 +67,9 @@
                    class="form-control"
                    placeholder="Something you want your player to achieve in a video game."></input>
           </div>
+          <button type="submit" form="pledge" class="btn btn-primary">
+            Pledge
+          </button>
         </div>
       </div>
 
