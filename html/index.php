@@ -33,10 +33,12 @@
 
     <div class="container floating-container">
       <div class="row">
-        <h3>I am a</h3>
-        <div class="btn-group" role="group">
-          <button type="button" class="btn btn-default">Streamer</button>
-          <button type="button" class="btn btn-default">Viewer</button>
+        <div class="col-md-12">
+          <h3>I am a</h3>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default">Streamer</button>
+            <button type="button" class="btn btn-default">Viewer</button>
+          </div>
         </div>
       </div>
     </div>
