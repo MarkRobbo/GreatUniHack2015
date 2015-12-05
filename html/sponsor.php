@@ -51,7 +51,6 @@
           <div class="form-group">
             <label for="charity">Charity</label>
             <input type="text" data-provide="typeahead"
-                   data-source="["Alabama", "Something", "More"]"
                    autocomplete="off" id="charity" class="form-control"></input>
           </div>
         </div>
@@ -62,5 +61,6 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
+    <script src="stypeahead.js"></script>
   </body>
 </html>
