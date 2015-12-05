@@ -3,7 +3,6 @@
    if (isset($_SESSION['steamID']))
        header('Location: /');
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>

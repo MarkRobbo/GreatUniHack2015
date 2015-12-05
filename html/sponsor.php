@@ -23,11 +23,10 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
-          Welcome! You can manage the players you sponsor here. Pick a
-          charity to support, a player to sponsor and an achievement
-          they should reach.
-        </div>
+        <h5 class="col-md-6">
+          Welcome! You can manage your sponsoring here. First,
+          pick a player to sponsor.
+        </h5>
       </div>
 
       <div class="row">
@@ -40,7 +39,12 @@
         </div>
       </div>
 
-      <div id="" class="row hidden">
+      <div id="player_details" class="row hidden">
+        <h5 class="col-md-12">
+          Now, specify exactly what your player should achieve to
+          receive your donation.
+        </h5>
+
         <div class="col-md-12">
           <div class="form-group">
             <label for="game">Game</label>
