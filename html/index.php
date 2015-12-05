@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Achievements4Charity | Sponsor others to complete game achievements</title>
+    <title>AchieveForGood | Sponsor others to complete game achievements</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css"></link>
@@ -110,7 +110,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2015 Achievements4Charity &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2015 AchieveForGood &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
 
     </div><!-- /.container -->
