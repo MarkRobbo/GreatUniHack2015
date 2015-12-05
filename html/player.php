@@ -33,16 +33,6 @@
 					</div>
 				</div>
 			</div>
-						
-			<div class="row">
-				<div class="col-md-12">
-					<div class="form-group">
-						<label for="charity">Charity</label>
-						<input type="text" class="form-control"
-                   id="charity" placeholder="Charity"></input>
-					</div>
-        </div>
-      </div>
 
     </div>
     
@@ -50,5 +40,13 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
     <script src="/js/typeaheadData.js"></script>
+    
+    <script type="text/javascript">
+    	window.onload(function() {
+    		element = $('#game');
+    		source = ["test", "this", "something", "more"];
+    		connectTypeahead(element, source);
+    	});
+    </script>
   </body>
 </html>
