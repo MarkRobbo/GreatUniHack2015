@@ -19,11 +19,8 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="btn-group-vertical" role="group">
-            Steam ID
-            
-            
             
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							Game <span class="caret"></span>
@@ -34,14 +31,12 @@
 							<li role="separator" class="divider"></li>
 						</ul>
 						
-						
 						<div class="form-group">
 							<label for="charity">Charity</label>
 							<input type="text" data-provide="typeahead"
 										 autocomplete="off" id="charity" class="form-control"></input>
 						</div>
           </div>
-
         </div>
       </div>
 
@@ -50,6 +45,6 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
+    <script src="/js/typeaheadData.js"></script>
   </body>
-
 </html>
