@@ -20,7 +20,7 @@
 						
       <div class="row">
         <div class="col-md-6">
-        	Welcome! You can choose which game to raise money for here!
+        	<h5>Welcome! You can choose which game to raise money for here!</h5>
         </div>
       </div>
 						

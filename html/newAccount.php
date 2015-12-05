@@ -2,7 +2,6 @@
   $atNewUserPage = true;
   include('/login/validateLogin.php');
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -28,6 +27,11 @@
           <input type="submit" value="Submit">
         </form>
       </div>
+      <?php
+  echo '<pre>';
+  print_r($_SESSION);
+  echo '</pre>';
+      ?>
     </div>
   </body>
 
