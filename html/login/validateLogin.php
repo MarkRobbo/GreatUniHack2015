@@ -109,4 +109,5 @@
 			header( 'Location: /login.php?return_url=' . urlencode($_SERVER['REQUEST_URI']) );
 		}
 	}
+
 ?>

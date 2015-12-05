@@ -13,43 +13,40 @@
     ?>
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <h1 class="row page-header">Username</h1>
         </div>
       </div>
-
+						
       <div class="row">
         <div class="col-md-6">
-          <div class="btn-group-vertical" role="group">
-            Steam ID
-            
-            
-            
-						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Game <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu">
-							<li><a href="#">A charity name</a></li>
-							<li><a href="#">Another charity</a></li>
-							<li role="separator" class="divider"></li>
-						</ul>
-						
-						
-						<div class="form-group">
-							<label for="charity">Charity</label>
-							<input type="text" data-provide="typeahead"
-										 autocomplete="off" id="charity" class="form-control"></input>
-						</div>
-          </div>
-
+        	Welcome! You can choose which game to raise money for here!
         </div>
       </div>
+						
+      <div class="row">
+        <div class="col-md-12">
+					<div class="form-group">
+						<label for="game">Game</label>
+						<input type="text" class="form-control"
+                   id="game" placeholder="Game"></input>
+					</div>
+				</div>
+			</div>
 
     </div>
     
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
+    <script src="/js/typeaheadData.js"></script>
+    
+    <script type="text/javascript">
+    	window.onload(function() {
+    		element = $('#game');
+    		source = ["test", "this", "something", "more"];
+    		connectTypeahead(element, source);
+    	});
+    </script>
   </body>
-
 </html>
