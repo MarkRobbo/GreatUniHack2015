@@ -50,7 +50,7 @@
 
           <div class="form-group">
             <label for="charity">Charity</label>
-            <input type="text" data-provide="typeahead"
+            <input type="text" data-provide="["nice","to","have","some","data"]"
                    autocomplete="off" id="charity" class="form-control"></input>
           </div>
         </div>
@@ -58,6 +58,6 @@
 
     </div>
 
-    <script src="bootstrap3-typeahead.min.js"></script>
+    <script src="/js/bootstrap3-typeahead.min.js"></script>
   </body>
 </html>

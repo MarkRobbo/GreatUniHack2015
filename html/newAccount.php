@@ -19,8 +19,12 @@
 
     <div class="container main-container">
       <div class="col-md-12">
-        <h2>Please sign in using steam first.</h2>
-        <?php include('login/signInButton.include.php');?>
+        <p>Thank you for signing up for achieve4charity! To begin making or accepting challenges, please provide your email:</p>
+        <form action="newAccount.php" method="POST">
+          Email:<br>
+          <input type="email" name="email">
+          <input type="submit" value="Submit">
+        </form>
       </div>
     </div>
   </body>

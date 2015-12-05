@@ -12,11 +12,32 @@
 			// Redirect to ask for email page if we are not already there
 			header('location: /newAccount.php');
 		}
-		elseif (isset($_POST['email']))
+		elseif (isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 		{
 			// If we are already there and an email was provided, add 
 			// account to the database with details
-			
+
+			// Connect to MySQL database
+			$db = new mysqli('localhost', 'root', 'greatunihack', 'AchievementDatabase');
+			if($db->connect_errno > 0){
+			    die('Unable to connect to database [' . $db->connect_error . ']');
+			}
+
+			// Get more information about the player
+			include_once "SteamAPI.class.php";
+			$steamAPI = new SteamAPI();
+			$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
+
+			// Create new user
+			$insert = $db->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
+			$insert->bind_param("sss", $_SESSION['steamID'], $_POST['email'], $playerSummary['personaname']);
+			$insert->execute();
+
+			$db->close();
+
+			// Update session variables
+			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['activated'] = true;
 		}
 	}
 
@@ -42,11 +63,13 @@
 				{
 					// If account doesn't exist, we need to request their email to
 					// create their account (to be implemented)
-					echo 'Your account doesnt exist!';
 					$_SESSION['steamID'] = $loginAttempt;
 
 					// This email isn't activated yet, we don't have the user in the database
 					$_SESSION['activated'] = false;
+
+					// Redirect to where they can activate their account
+					header('location: /newAccount.php');
 				}
 				else
 				{
