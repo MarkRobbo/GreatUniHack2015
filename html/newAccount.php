@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $atNewUserPage = true;
   include('/login/validateLogin.php');
 ?>
