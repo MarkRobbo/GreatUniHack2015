@@ -5,10 +5,6 @@
 	include_once "SteamSignIn.class.php";
 	$steamSignIn = new SteamSignIn();
 
-	echo '<pre>';
-	var_dump($_SESSION);
-	echo '</pre>';
-
 	// If the account is not activated yet, ask for their email
 	if (isset($_SESSION['steamID']) && $_SESSION['activated'] == false)
 	{
