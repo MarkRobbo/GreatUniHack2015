@@ -60,7 +60,7 @@
     </div>
 
     <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootstrap.min.js"></scirpt>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
   </body>
 </html>
