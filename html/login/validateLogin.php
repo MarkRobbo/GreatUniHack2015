@@ -32,7 +32,7 @@
 				
 				// Create new user
 				$insert = $db->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
-				$insert->bind_param("sss", $_SESSION['steamID'], $_POST['email'], $playerSummary['players'][0]['personaname']);
+				$insert->bind_param("sss", $_SESSION['steamID'], $_POST['email'], $playerSummary['response']['players'][0]['personaname']);
 				$insert->execute();
 
 				$db->close();
@@ -95,8 +95,8 @@
 						$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
 
 						// Store avatar and name
-						$_SESSION['name'] = $playerSummary['players'][0]['personaname'];
-						$_SESSION['avatar'] = $playerSummary['players'][0]['avatarfull'];
+						$_SESSION['name'] = $playerSummary['response']['players'][0]['personaname'];
+						$_SESSION['avatar'] = $playerSummary['response']['players'][0]['avatarfull'];
 					}
 				}
 
