@@ -16,11 +16,7 @@
       <div class="row">
         <div class="col-md-12">
           <h3>I am a</h3>
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-12">
           <div class="btn-group main-container" role="group">
             <button type="button" class="btn btn-default">Player</button>
             <button type="button" class="btn btn-default">Sponsor</button>
