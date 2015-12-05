@@ -38,17 +38,18 @@
                    id="player" placeholder="Player"></input>
           </div>
         </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="form-group">
-              <label for="game">Game</label>
-              <input type="text" class="form-control"
-                     id="game" disabled>Something for now</input>
-            </div>
-          </div>
-        </div>
-
       </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="game">Game</label>
+            <input type="text" class="form-control"
+                   id="game" disabled>Something for now</input>
+            </div>
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>
