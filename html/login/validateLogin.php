@@ -10,7 +10,7 @@
 		if (!$atNewUserPage)
 		{
 			// Redirect to ask for email page if we are not already there
-			header('location: /newAccount.php');
+			header('location: /newAccount.php?redirected');
 		}
 		elseif (isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 		{
