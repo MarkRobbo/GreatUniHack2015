@@ -17,7 +17,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <?php echo '<a href="user.php" class="pull-right"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" alt="avatar"></a>'; ?>
+          <?php if (isset($_SESSION['steamID'])) { echo '<a href="user.php" class="pull-right"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" id="avatar" alt="avatar"></a>'; } ?>
           <li><?php
             if (isset($_SESSION['steamID']))
               echo '<a href="user.php">Logged in as: ' . $_SESSION['name'] . '</a>';
