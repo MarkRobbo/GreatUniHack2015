@@ -12,7 +12,7 @@
 			// Redirect to ask for email page if we are not already there
 			header('location: /newAccount.php?redirected');
 		}
-		elseif (isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
+		else if (isset($_POST['email']))
 		{
 			echo 'madeithere';
 			// If we are already there and an email was provided, add 
