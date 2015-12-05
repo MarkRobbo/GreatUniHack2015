@@ -25,7 +25,7 @@
       <div class="row">
         <h5 class="col-md-6">
           Welcome! You can manage your sponsoring here. First,
-          pick a player to sponsor.
+          pick a player to sponsor (all input boxes have dropdown lists).
         </h5>
       </div>
 
@@ -42,7 +42,7 @@
       <div id="player_details" class="row hidden">
         <h5 class="col-md-12">
           Now, specify exactly what your player should achieve to
-          receive your donation.
+          receive your donation, and what you would like to donate to.
         </h5>
 
         <div class="col-md-12">
@@ -56,8 +56,15 @@
             <label for="charity">Charity</label>
             <input type="text" data-provide="typeahead"
                    autocomplete="off" id="charity"
-                   class="form-control" placeholder="Charity"></input>
+                   class="form-control" placeholder="Charity" disabled></input>
           </div>
+
+          <div class="form-group">
+            <label for="achievement">Achievement</label>
+            <input type="text" data-provide="typeahead"
+                   autocomplete="off" id="achievement" maxlength="160"
+                   placeholder="Something you want your player to
+                   achieve in a video game."></input>
         </div>
       </div>
 
@@ -70,8 +77,16 @@
 
     <script type="text/javascript">
         window.onload = function () {
-            var element = $('#charity');
-            var source = ["test", "this", "code", "something", "more"];
+            var element;
+            var source;
+
+            element = $('#player');
+            source = ["stuff", "that", "should", "be", "player", "names"];
+
+            connectTypeahead(element, source);
+
+            element = $('#charity');
+            source = ["test", "this", "code", "some", "more"];
 
             connectTypeahead(element, source);
       };
