@@ -1,6 +1,6 @@
 <?php
   $atNewUserPage = true;
-  include('/login/validateLogin.php');
+  include_once 'login/validateLogin.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,7 +29,10 @@
       </div>
       <?php
   echo '<pre>';
-  print_r($_SESSION);
+  if ($_SESSION['activated'] == false) { echo 'false'; } else { echo 'true'; }
+  echo $_SESSION['email'];
+  echo $_SESSION['steamID'];
+  echo $_POST['email'];
   echo '</pre>';
       ?>
     </div>

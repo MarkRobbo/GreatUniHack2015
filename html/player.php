@@ -42,11 +42,12 @@
     <script src="/js/typeaheadData.js"></script>
     
     <script type="text/javascript">
-    	window.onload(function() {
-    		element = $('#game');
-    		source = ["test", "this", "something", "more"];
-    		connectTypeahead(element, source);
-    	});
+		window.onload = function () {
+			var element = $('#game');
+			var source = ["test", "this", "code", "something", "more"];
+
+			connectTypeahead(element, source);
+		};
     </script>
   </body>
 </html>
