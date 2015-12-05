@@ -30,7 +30,7 @@
       </div>
       <?php
   echo '<pre>';
-  echo $_SESSION['activated'];
+  if (!$_SESSION['activated']) { echo 'false'; } else { echo 'true'; }
   echo $_SESSION['email'];
   echo $_SESSION['steamID'];
   echo '</pre>';
