@@ -29,7 +29,9 @@
 				include_once "SteamAPI.class.php";
 				$steamAPI = new SteamAPI();
 				$playerSummary = $steamAPI->getPlayerInfo($_SESSION['steamID']);
-				echo $playerSummary['personaname'];
+				echo '<pre>';
+				print_r($playerSummary);
+				echo '</pre';
 				
 				// Create new user
 				$insert = $db->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
