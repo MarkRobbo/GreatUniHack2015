@@ -17,9 +17,10 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <?php echo '<a href="user.php" class="pull-right"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" alt="avatar"></a>'; ?>
           <li><?php
             if (isset($_SESSION['steamID']))
-              echo '<a href="user.php" class="pull-left"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" alt="avatar"></a><a href="user.php">Logged in as: ' . $_SESSION['name'] . '</a>';
+              echo '<a href="user.php">Logged in as: ' . $_SESSION['name'] . '</a>';
             else
               include 'login/signInButton.include.php';
           ?></li>
