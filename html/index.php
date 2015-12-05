@@ -31,7 +31,7 @@
       </div>
     </nav>
 
-    <div class="container floating-container">
+    <div class="container main-container">
 
       <div class="row">
         <div class="col-md-12">
