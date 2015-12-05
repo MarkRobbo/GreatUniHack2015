@@ -12,7 +12,7 @@
 			// Redirect to ask for email page if we are not already there
 			header('location: /newAccount.php?redirected');
 		}
-		else if (isset($_POST['email']))
+		if ($atNewUserPage && isset($_POST['email']))
 		{
 			echo 'madeithere';
 			// If we are already there and an email was provided, add 
