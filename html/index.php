@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="./css/bootstrap.min.css"></link>
+    <?php
+       include('head.html');
+    ?>
     <title>Anything</title>
   </head>
 
