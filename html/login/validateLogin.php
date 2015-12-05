@@ -30,5 +30,6 @@
 		}
 	} else {
 		echo $_SESSION['steamID'];
+		session_destroy();
 	}
 ?>
