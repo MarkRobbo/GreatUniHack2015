@@ -4,7 +4,7 @@
        header('Location: /');
 ?>
 
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
   <head>
     <?php

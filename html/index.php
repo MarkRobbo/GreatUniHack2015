@@ -18,8 +18,12 @@
           <h3>I am a</h3>
 
           <div class="btn-group main-container" role="group">
-            <button type="button" class="btn btn-default">Player</button>
-            <button type="button" class="btn btn-default">Sponsor</button>
+            <a href="player.php">
+              <div class="btn btn-default">Player</div>
+            </a>
+            <a href="sponsor.php">
+              <div class="btn btn-default">Sponsor</div>
+            </a>
           </div>
         </div>
       </div>
