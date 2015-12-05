@@ -1,3 +1,6 @@
+<?php
+   include_once 'login/validate.php';
+?>
 <!DOCTYPE html>
 <html>
   <head>

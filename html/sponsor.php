@@ -1,7 +1,6 @@
 <?php
-   include('/login/validateLogin.php');
+   include_once 'login/validateLogin.php';
 ?>
-
 <!DOCTYPE html>
 <html>
   <head>
