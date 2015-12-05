@@ -7,7 +7,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/" class="pull-left"><img src="images/logo.png" width="32" height="32" alt="logo"></a>
+        <a href="/" class="pull-left"><img src="images/logo.png" width="48" height="48" alt="logo"></a>
         <a class="navbar-brand" href="/">AchieveForGood</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
@@ -17,6 +17,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
+          <?php echo '<a href="user.php" class="pull-right"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" alt="avatar"></a>'; ?>
           <li><?php
             if (isset($_SESSION['steamID']))
               echo '<a href="user.php">Logged in as: ' . $_SESSION['name'] . '</a>';
