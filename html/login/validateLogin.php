@@ -9,7 +9,7 @@
 		$loginAttempt = $steamSignIn->validate();
 
 		// Echo steam ID if login was successful
-		if ($loginAttempt)
+		if ($loginAttempt != '')
 		{
 			// Store the steam ID in the session variable
 			$_SESSION['steamID'] = $loginAttempt;
@@ -26,7 +26,7 @@
 		else
 		{
 			// Login wasn't attempted and page cannot be accessed without privilages
-			header( 'Location: /login.php?return_url=' . urlencode() );
+			header( 'Location: /login.php?return_url=' . urlencode($_SERVER['REQUEST_URI']) );
 		}
 	} else {
 		echo $_SESSION['steamID'];
