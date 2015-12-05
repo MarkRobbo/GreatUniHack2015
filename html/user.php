@@ -1,5 +1,5 @@
 <?php
-   include_once 'login/validate.php';
+   include_once 'login/validateLogin.php';
 ?>
 <!DOCTYPE html>
 <html>
