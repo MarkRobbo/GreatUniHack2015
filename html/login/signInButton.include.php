@@ -3,7 +3,7 @@
 	include_once "SteamSignIn.class.php";
 	$steamSignIn = new SteamSignIn();
 
-	if ($body)
+	if ($body == true)
 		$url = "https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_noborder.png";
 	else
 		$url = "https://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_small.png";
