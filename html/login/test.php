@@ -3,4 +3,4 @@
 	include_once "SteamSignIn.class.php";
 	$steamSignIn = new SteamSignIn();
 	echo ">" . $steamSignIn->genUrl();
-?
+?>
