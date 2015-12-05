@@ -65,12 +65,12 @@
     <script src="/js/typeaheadData.js"></script>
 
     <script type="text/javascript">
-        window.onload(function () {
+        window.onload = function () {
             var element = $('#charity');
             var source = ["test", "this", "code", "something", "more"];
 
             connectTypeahead(element, source);
-      });
+      };
     </script>
 
   </body>
