@@ -64,8 +64,7 @@
             <input type="text" data-provide="typeahead"
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
-                   placeholder="Something you want your player to "
-                                "achieve in a video game."></input>
+                   placeholder="Something you want your player to achieve in a video game."></input>
           </div>
         </div>
       </div>
