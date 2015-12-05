@@ -1,6 +1,6 @@
 <?php
   $atNewUserPage = true;
-  include('/login/validateLogin.php');
+  include_once 'login/validateLogin.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,11 +27,6 @@
           <input type="submit" value="Submit">
         </form>
       </div>
-      <?php
-  echo '<pre>';
-  print_r($_SESSION);
-  echo '</pre>';
-      ?>
     </div>
   </body>
 
