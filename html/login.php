@@ -20,7 +20,7 @@
     <div class="container main-container">
       <div class="col-md-12">
         <h2>Please sign in using steam first.</h2>
-        <?php include('login/signInButton.include.php');?>
+        <?php $body = true; include('login/signInButton.include.php');?>
       </div>
     </div>
   </body>
