@@ -10,3 +10,7 @@
     width: 24px;
     height: 24px;
 }
+
+ul .nav .navbar-nav .navbar-right {
+    margin-right: 5px;
+}
