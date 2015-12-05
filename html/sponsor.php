@@ -63,13 +63,14 @@
             <label for="achievement">Achievement</label>
             <input type="text" data-provide="typeahead"
                    autocomplete="off" id="achievement" maxlength="160"
+                   class="form-control"
                    placeholder="Something you want your player to
-                   achieve in a video game."></input>
+                                achieve in a video game."></input>
+          </div>
         </div>
       </div>
 
     </div>
-
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
