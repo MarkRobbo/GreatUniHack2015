@@ -6,7 +6,19 @@
 
 	// If the account is not activated yet, ask for their email
 	if (isset($_SESSION['steamID']) && $_SESSION['activated'] == false)
-		header('location: /login/newAccount.php');
+	{
+		if (!$atNewUserPage)
+		{
+			// Redirect to ask for email page if we are not already there
+			header('location: /newAccount.php');
+		}
+		elseif (isset($_POST['email']))
+		{
+			// If we are already there and an email was provided, add 
+			// account to the database with details
+			
+		}
+	}
 
 	// If the user is not logged in at all
 	if (!isset($_SESSION['steamID']))
