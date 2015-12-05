@@ -14,6 +14,7 @@
 		}
 		elseif (isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 		{
+			echo 'madeithere';
 			// If we are already there and an email was provided, add 
 			// account to the database with details
 
@@ -22,6 +23,8 @@
 			if($db->connect_errno > 0){
 			    die('Unable to connect to database [' . $db->connect_error . ']');
 			}
+
+			echo 'could connect';
 
 			// Get more information about the player
 			include_once "SteamAPI.class.php";
