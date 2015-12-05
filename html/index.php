@@ -3,7 +3,7 @@
   <head>
     <?php
        include('head.html');
-    ?>
+       ?>
     <title>Anything</title>
   </head>
 
@@ -33,14 +33,12 @@
 
     <div class="container floating-container">
       <div class="row">
-        <div class="col-md-12">
-          <h3>I am a</h1>
+        <h3>I am a</h3>
+        <div class="btn-group" role="group" aria-label="...">
+          <button type="button" class="btn btn-default">Streamer</button>
+          <button type="button" class="btn btn-default">Viewer</button>
         </div>
       </div>
-			<div class="btn-group" role="group" aria-label="...">
-				<button type="button" class="btn btn-default">Streamer</button>
-				<button type="button" class="btn btn-default">Viewer</button>
-			</div>
     </div>
   </body>
 
