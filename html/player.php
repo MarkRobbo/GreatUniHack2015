@@ -24,7 +24,15 @@
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-default">Steam ID</button>
 						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							"Game" <span class="caret"></span>
+							Game <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">A charity name</a></li>
+							<li><a href="#">Another charity</a></li>
+							<li role="separator" class="divider"></li>
+						</ul>
+						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Charity <span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu">
 							<li><a href="#">A charity name</a></li>
