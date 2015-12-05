@@ -43,7 +43,7 @@
     
     <script type="text/javascript">
 		window.onload = function () {
-			var element = $('#charity');
+			var element = $('#game');
 			var source = ["test", "this", "code", "something", "more"];
 
 			connectTypeahead(element, source);
