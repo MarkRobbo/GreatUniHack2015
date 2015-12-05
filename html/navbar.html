@@ -7,23 +7,24 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="/" class="pull-left"><img src="images/logo.png" width="32" height="32" alt="logo"></a>
+        <a href="/" class="pull-left"><img src="images/logo.png" width="48" height="48" alt="logo"></a>
         <a class="navbar-brand" href="/">AchieveForGood</a>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="achievements.php">View your Challenges</a></li>
+          <li><a href="sponsor.php">Make a Challenge</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><?php
-          if (isset($_SESSION['steamID']))
-            echo 'Logged in as: ' . $_SESSION['name'];
-          else
-            include 'login/signInButton.include.php';
-        ?></li>
-      </ul>
+          <?php if (isset($_SESSION['steamID'])) { echo '<a href="user.php" class="pull-right"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" id="avatar" alt="avatar"></a>'; } ?>
+          <li><?php
+            if (isset($_SESSION['steamID']))
+              echo '<a href="user.php">Logged in as: ' . $_SESSION['name'] . '</a>';
+            else
+              include 'login/signInButton.include.php';
+          ?></li>
+        </ul>
       </div>
     </nav>
 </div>

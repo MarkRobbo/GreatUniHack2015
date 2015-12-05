@@ -10,7 +10,6 @@
     <title>Achievements4Charity | Sponsor others to complete game achievements</title>
 
   </head>
-<!-- NAVBAR
   <body>
 
     <?php
