@@ -4,24 +4,61 @@
 	include_once "SteamSignIn.class.php";
 	$steamSignIn = new SteamSignIn();
 
+	// If the account is not activated yet, ask for their email
+	if (isset($_SESSION['steamID']) && $_SESSION['activated'] == false)
+		header('location: /login/newAccount.php');
+
+	// If the user is not logged in at all
 	if (!isset($_SESSION['steamID']))
 	{
+		// Validate the login with class
 		$loginAttempt = $steamSignIn->validate();
 
 		// Echo steam ID if login was successful
 		if ($loginAttempt != '')
 		{
-			// Store the steam ID in the session variable
-			$_SESSION['steamID'] = $loginAttempt;
+			// Connect to MySQL database
+			$db = new mysqli('localhost', 'root', 'greatunihack', 'AchievementDatabase');
+			if($db->connect_errno > 0){
+			    die('Unable to connect to database [' . $db->connect_error . ']');
+			}
 
-			// Get more information about the player
-			include_once "SteamAPI.class.php";
-			$steamAPI = new SteamAPI();
-			$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
+			// Check if the user exists already
+			if ($result = $db->query("SELECT email FROM Users WHERE steamID=$loginAttempt")) 
+			{
+				if ($result->num_rows < 1)
+				{
+					// If account doesn't exist, we need to request their email to
+					// create their account (to be implemented)
+					echo 'Your account doesnt exist!';
+					$_SESSION['steamID'] = $loginAttempt;
 
-			// Store avatar and name
-			$_SESSION['name'] = $playerSummary['personaname'];
-			$_SESSION['avatar'] = $playerSummary['avatarfull'];
+					// This email isn't activated yet, we don't have the user in the database
+					$_SESSION['activated'] = false;
+				}
+				else
+				{
+					// This account is activated
+					$_SESSION['activated'] = true;
+
+					// Their account already exists so we can get the email from the query
+					$_SESSION['email'] = $result->fetch_object()->email;
+
+					// Store the steam ID in the session variable
+					$_SESSION['steamID'] = $loginAttempt;
+
+					// Get more information about the player
+					include_once "SteamAPI.class.php";
+					$steamAPI = new SteamAPI();
+					$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
+
+					// Store avatar and name
+					$_SESSION['name'] = $playerSummary['personaname'];
+					$_SESSION['avatar'] = $playerSummary['avatarfull'];
+				}
+			}
+
+			$db->close();
 		}
 		else
 		{
