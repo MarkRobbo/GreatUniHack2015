@@ -20,10 +20,10 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
-          <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default">Streamer</button>
-            <button type="button" class="btn btn-default">Viewer</button>
+        <div class="col-md-12">
+          <div class="btn-group main-container" role="group">
+            <button type="button" class="btn btn-default">Player</button>
+            <button type="button" class="btn btn-default">Sponsor</button>
           </div>
         </div>
       </div>
