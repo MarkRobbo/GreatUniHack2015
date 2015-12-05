@@ -79,7 +79,6 @@
     <script src="/js/typeaheadData.js"></script>
 
     <script type="text/javascript">
-        window.onload = function () {
             var element;
             var source;
 
@@ -97,7 +96,6 @@
             source = ["test", "this", "code", "some", "more"];
 
             connectTypeahead(element, source);
-      };
     </script>
 
   </body>
