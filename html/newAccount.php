@@ -29,7 +29,7 @@
       </div>
       <?php
   echo '<pre>';
-  var_dump($_SESSION);
+  print_r($_SESSION);
   echo '</pre>';
       ?>
     </div>
