@@ -17,7 +17,7 @@
 			// Redirect to ask for email page if we are not already there
 			header('location: /newAccount.php');
 		}
-		elseif (isset($_POST['email']))
+		elseif (isset($_POST['email']) && filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))
 		{
 			echo 'madeithere';
 			// If we are already there and an email was provided, add 
@@ -109,4 +109,5 @@
 			header( 'Location: /login.php?return_url=' . urlencode($_SERVER['REQUEST_URI']) );
 		}
 	}
+
 ?>
