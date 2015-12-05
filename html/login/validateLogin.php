@@ -26,7 +26,9 @@
 		else
 		{
 			// Login wasn't attempted and page cannot be accessed without privilages
-			header( 'Location: /login.php' );
+			header( 'Location: /login.php?return_url=' . urlencode() );
 		}
+	} else {
+		echo $_SESSION['steamID'];
 	}
 ?>
