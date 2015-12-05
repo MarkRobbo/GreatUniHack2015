@@ -19,8 +19,9 @@
 
     <div class="container main-container">
       <div class="col-md-12">
+        <h2>Account Creation</h2>
         <p>Thank you for signing up for achieve4charity!</p>
-        <p>To begin making or accepting challenges, please provide your email:</p>
+        <p>To begin making or accepting challenges, please provide your email address:</p>
         <form action="newAccount.php" method="POST">
           Email:<br>
           <input type="email" name="email">
