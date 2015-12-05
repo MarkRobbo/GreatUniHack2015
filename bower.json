@@ -1,0 +1,29 @@
+{
+  "name": "Anything",
+  "homepage": "https://github.com/MarkRobbo/GreatUniHack2015",
+  "authors": [
+    "Tristan Maat <tm@tlater.net>",
+    "Jack Evans <jakkuebansu@yahoo.co.uk>",
+    "Mark Robinson <mark@goldtek.co.uk>",
+    "Lauren Weston <c@laurenweston.com>"
+  ],
+  "description": "Gamer's charity manager",
+  "main": "",
+  "moduleType": [],
+  "keywords": [
+    "charity",
+    "gaming"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
