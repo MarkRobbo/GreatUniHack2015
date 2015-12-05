@@ -16,7 +16,6 @@
 		{
 			if ($atNewUserPage == true && isset($_POST['email']))
 			{
-				echo 'madeithere';
 				// If we are already there and an email was provided, add 
 				// account to the database with details
 
@@ -26,13 +25,11 @@
 				    die('Unable to connect to database [' . $db->connect_error . ']');
 				}
 
-				echo 'could connect';
-
 				// Get more information about the player
 				include_once "SteamAPI.class.php";
 				$steamAPI = new SteamAPI();
 				$playerSummary = $steamAPI->getPlayerInfo($_SESSION['steamID']);
-
+				print_r($playerSummary);
 				// Create new user
 				$insert = $db->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
 				$insert->bind_param("sss", $_SESSION['steamID'], $_POST['email'], $playerSummary['personaname']);
