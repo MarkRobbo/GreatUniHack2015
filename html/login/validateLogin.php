@@ -108,7 +108,7 @@
 			else
 			{
 				// Login wasn't attempted and page cannot be accessed without privilages
-				if (basename($_SERVER['PHP_SELF']) != 'login.php')
+				if (basename($_SERVER['PHP_SELF']) != 'login.php' && basename($_SERVER['PHP_SELF']) != 'index.php')
 					header( 'Location: /login.php?return_url=' . urlencode($_SERVER['REQUEST_URI']) );
 			}
 		}
