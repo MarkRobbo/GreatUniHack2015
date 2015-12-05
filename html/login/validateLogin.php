@@ -108,7 +108,8 @@
 			else
 			{
 				// Login wasn't attempted and page cannot be accessed without privilages
-				header( 'Location: /login.php?return_url=' . urlencode($_SERVER['REQUEST_URI']) );
+				if (__FILE__ != 'login.php')
+					header( 'Location: /login.php?return_url=' . urlencode($_SERVER['REQUEST_URI']) );
 			}
 		}
 	}
