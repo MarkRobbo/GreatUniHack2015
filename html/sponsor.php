@@ -57,5 +57,7 @@
       </div>
 
     </div>
+
+    <script src="bootstrap3-typeahead.min.js"></script>
   </body>
 </html>
