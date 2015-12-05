@@ -64,7 +64,7 @@
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
                    placeholder="Something you want your player to
-                                achieve in a video game."></input>
+achieve in a video game."></input>
           </div>
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge
