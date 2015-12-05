@@ -18,7 +18,7 @@
 			// Get more information about the player
 			include_once "SteamAPI.class.php";
 			$steamAPI = new SteamAPI();
-			$playerSummary = $steamAPI->getPlayerInfo();
+			$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
 			print_r($playerSummary);
 
 			//$_SESSION['name'] = $playerSummary[];
