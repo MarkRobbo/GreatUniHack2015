@@ -7,12 +7,7 @@
 	// If the account is not activated yet, ask for their email
 	if (isset($_SESSION['steamID']) && $_SESSION['activated'] == false)
 	{
-		if (!$atNewUserPage)
-		{
-			// Redirect to ask for email page if we are not already there
-			header('location: /newAccount.php?redirected');
-		}
-		if ($atNewUserPage && isset($_POST['email']))
+		if ($atNewUserPage == true && isset($_POST['email']))
 		{
 			echo 'madeithere';
 			// If we are already there and an email was provided, add 
@@ -41,6 +36,11 @@
 			// Update session variables
 			$_SESSION['email'] = $_POST['email'];
 			$_SESSION['activated'] = true;
+		}
+		if (!$atNewUserPage)
+		{
+			// Redirect to ask for email page if we are not already there
+			header('location: /newAccount.php?redirected');
 		}
 	}
 
