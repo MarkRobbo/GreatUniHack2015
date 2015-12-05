@@ -34,6 +34,10 @@
 			$insert->execute();
 
 			$db->close();
+
+			// Update session variables
+			$_SESSION['email'] = $_POST['email'];
+			$_SESSION['activated'] = true;
 		}
 	}
 
@@ -59,11 +63,13 @@
 				{
 					// If account doesn't exist, we need to request their email to
 					// create their account (to be implemented)
-					echo 'Your account doesnt exist!';
 					$_SESSION['steamID'] = $loginAttempt;
 
 					// This email isn't activated yet, we don't have the user in the database
 					$_SESSION['activated'] = false;
+
+					// Redirect to where they can activate their account
+					header('location: /newAccount.php');
 				}
 				else
 				{
