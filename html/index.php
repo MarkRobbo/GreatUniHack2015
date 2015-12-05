@@ -2,7 +2,7 @@
 <html>
   <head>
     <?php
-       include('head.html');
+       include('header.php);
        ?>
     <title>Anything</title>
   </head>
@@ -34,7 +34,7 @@
     <div class="container floating-container">
       <div class="row">
         <h3>I am a</h3>
-        <div class="btn-group" role="group" aria-label="...">
+        <div class="btn-group" role="group">
           <button type="button" class="btn btn-default">Streamer</button>
           <button type="button" class="btn btn-default">Viewer</button>
         </div>
