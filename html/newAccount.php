@@ -29,7 +29,9 @@
       </div>
       <?php
   echo '<pre>';
-  print_r($_SESSION);
+  echo $_SESSION['activated'];
+  echo $_SESSION['email'];
+  echo $_SESSION['steamID'];
   echo '</pre>';
       ?>
     </div>
