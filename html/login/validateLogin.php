@@ -20,8 +20,8 @@
 			$playerSummary = $steamAPI->getPlayerInfo();
 			print_r($playerSummary);
 
-			$_SESSION['name'] = $playerSummary[];
-			$_SESSION['avatar'] = $playerSummary[];
+			//$_SESSION['name'] = $playerSummary[];
+			//$_SESSION['avatar'] = $playerSummary[];
 		}
 		else
 		{
