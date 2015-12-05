@@ -17,13 +17,13 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-        <li><?php
-          if (isset($_SESSION['steamID']))
-            echo 'Logged in as: ' . $_SESSION['name'];
-          else
-            include 'login/signInButton.include.php';
-        ?></li>
-      </ul>
+          <li><?php
+            if (isset($_SESSION['steamID']))
+              echo '<a href="user.php">Logged in as: ' . $_SESSION['name'] . '</a>';
+            else
+              include 'login/signInButton.include.php';
+          ?></li>
+        </ul>
       </div>
     </nav>
 </div>
