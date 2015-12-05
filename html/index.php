@@ -2,8 +2,8 @@
 <html>
   <head>
     <?php
-       include('header.php);
-       ?>
+       include('header.html);
+    ?>
     <title>Anything</title>
   </head>
 
