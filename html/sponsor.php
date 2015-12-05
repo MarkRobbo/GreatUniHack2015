@@ -50,7 +50,8 @@
 
           <div class="form-group">
             <label for="charity">Charity</label>
-            <input type="text" data-provide="["nice","to","have","some","data"]"
+            <input type="text" data-provide="typeahead"
+                   data-source="["Alabama", "Something", "More"]"
                    autocomplete="off" id="charity" class="form-control"></input>
           </div>
         </div>
