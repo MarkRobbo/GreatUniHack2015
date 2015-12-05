@@ -1,7 +1,6 @@
 <?php
-  session_start();
   $atNewUserPage = true;
-  include_once '/login/validateLogin.php';
+  include_once 'login/validateLogin.php';
 ?>
 <!DOCTYPE html>
 <html>

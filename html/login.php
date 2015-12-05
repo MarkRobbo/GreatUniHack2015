@@ -1,5 +1,5 @@
 <?php
-   include('/login/validateLogin.php');
+   include_once 'login/validateLogin.php';
    if (isset($_SESSION['steamID']))
        header('Location: /');
 ?>
