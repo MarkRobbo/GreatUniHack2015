@@ -26,7 +26,7 @@
 		else
 		{
 			// Login wasn't attempted and page cannot be accessed without privilages
-			header( 'Location: /' );
+			header( 'Location: /login.php' );
 		}
 	}
 ?>

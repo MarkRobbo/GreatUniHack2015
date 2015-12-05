@@ -5,7 +5,7 @@
        include('header.html');
     ?>
     <title>Anything</title>
-  </head>h
+  </head>
 
   <body>
     <?php
