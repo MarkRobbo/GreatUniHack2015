@@ -45,8 +45,14 @@
           <div class="form-group">
             <label for="game">Game</label>
             <input type="text" class="form-control"
-                   id="game" disabled>Something for now</input>
-            </div>
+                   id="game" placeholder="Something for now" disabled></input>
+          </div>
+
+          <div class="form-group">
+            <label for="charity">Charity</label>
+            <input type="text" data-provide="typeahead"
+                   autocomplete="off" id="charity" class="form-control"></input>
+          </div>
         </div>
       </div>
 
