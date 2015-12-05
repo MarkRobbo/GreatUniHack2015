@@ -61,6 +61,6 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
-    <script src="stypeahead.js"></script>
+    <script src="/js/typeaheadData.js"></script>
   </body>
 </html>
