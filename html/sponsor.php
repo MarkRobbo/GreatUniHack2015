@@ -55,9 +55,8 @@
 
           <div class="form-group">
             <label for="charity">Charity</label>
-            <input type="text" data-provide="typeahead"
-                   autocomplete="off" id="charity"
-                   class="form-control" placeholder="Charity" disabled></input>
+            <input type="text" id="charity"
+                   class="form-control" placeholder="" disabled></input>
           </div>
 
           <div class="form-group">
@@ -65,7 +64,8 @@
             <input type="text" data-provide="typeahead"
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
-                   placeholder="Something you want your player to achieve in a video game."></input>
+                   placeholder="Something you want your player to
+                                achieve in a video game."></input>
           </div>
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge
