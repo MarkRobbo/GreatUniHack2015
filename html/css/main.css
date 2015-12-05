@@ -1,3 +1,12 @@
 .main-container {
     text-align: center;
 }
+
+.icon-wrapper {
+    text-align: center;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+}
