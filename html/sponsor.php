@@ -58,6 +58,6 @@
 
     </div>
 
-    <script src="bootstrap3-typeahead.min.js"></script>
+    <script src="/js/bootstrap3-typeahead.min.js"></script>
   </body>
 </html>
