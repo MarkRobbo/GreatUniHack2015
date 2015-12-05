@@ -46,7 +46,7 @@
             <div class="carousel-caption">
               <h1>Complete Achievements For Charity</h1>
               <p>Challenge your friends and favourite streamers to complete Steam achievements for a cash bounty</p>
-              <p><a class="btn btn-lg btn-primary" href="login.php" role="button">Log In Using Steam</a></p>
+              <p><?php include 'login/signInButton.include.php'; ?></p>
             </div>
           </div>
         </div>
