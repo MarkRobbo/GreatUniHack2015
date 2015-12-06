@@ -59,14 +59,14 @@ ini_set("display_errors", 1);
         <div class="col-md-12">
           <div class="form-group">
             <label for="charity">Charity</label>
-            <input type="text" id="charity"
+            <input type="text" id="charity" required
                    class="form-control" placeholder="" disabled></input>
           </div>
 
           <div class="form-group">
             <label for="game">Game</label>
             <input type="text" class="form-control" name="game"
-                   autocomplete="off"
+                   autocomplete="off" required
                    id="game" placeholder="Game"></input>
           </div>
 
@@ -76,13 +76,14 @@ ini_set("display_errors", 1);
             <label for="achievement">Achievement</label>
             <input type="text" data-provide="typeahead" name="achievement"
                    autocomplete="off" id="achievement" maxlength="160"
-                   class="form-control"
+                   class="form-control" required
                    placeholder="The achievement"></input>
           </div>
 
           <div class="form-group">
             <label for="amount">Amount</label>
             <input type="number" name="amount" autocomplete="off" id="amount"
+                   required
                    class="form-control" placeholder="Payment amount"></input>
           </div>
 
