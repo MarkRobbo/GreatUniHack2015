@@ -23,9 +23,6 @@
       <div class="row">
         <div class="col-md-12">
           <div class="btn-group btn-group-justified" role="group">
-            <a href="player.php">
-              <div class="btn btn-default">Change Preferred Charity</div>
-            </a>
             <a href="?logout=1">
               <div class="btn btn-default">Logout</div>
             </a>
@@ -33,7 +30,7 @@
 
         <div class="col-md-12">
           <div class="form-group">
-            <label for="charity">Change Preferred Charity:
+            <label for="charity">Change Your Preferred Charity:
             </label>
             <input type="text" class="form-control"
                    data-provide="typeahead" autocomplete="off"
