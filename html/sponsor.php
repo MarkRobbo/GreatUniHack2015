@@ -119,9 +119,9 @@ ini_set("display_errors", 1);
 
                            element = $('#game');
                            $.get("/login/getUserGanes.php?user=" + item.steamID,
-                                function (data) {
-                               console.log(data);
-                           };
+                                 function (data) {
+                                     console.log(data);
+                                 });
 
 
                            // $.get("/login/getUserAchievements.php?user="
