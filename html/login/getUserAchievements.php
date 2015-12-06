@@ -1,4 +1,6 @@
 <?php
+include_once 'SteamAPI.class.php';
+
 $user = $_GET["user"];
 $game = $_GET["game"];
 
