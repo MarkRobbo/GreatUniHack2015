@@ -26,6 +26,14 @@
 			$apiResponse = file_get_contents(self::BASE_URL . "ISteamUserStats/GetPlayerAchievements/v0001/?appid=" . urlencode($appID) ."&key=" . self::API_KEY . "&steamid=" . urlencode($steamID) ."&format=json&l=english");
 			return json_decode($apiResponse, true);
 		}
+
+		// Get the game name from an app ID
+		public static function getGameName($appID)
+		{
+			$apiResponse = file_get_contents(self::BASE_URL . "ISteamUserStats/GetSchemaForGame/v2/?appid=" . urlencode($appID) ."&key=" . self::API_KEY . "&format=json");
+			$apiResponse = json_decode($apiResponse, true);
+			return $apiResponse['game']['gameName'];
+		}
 	}
 
 ?>
