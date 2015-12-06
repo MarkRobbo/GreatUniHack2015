@@ -6,5 +6,7 @@ $game = $_GET["game"];
 
 $steamAPI = new SteamAPI();
 
-var_dump($steamAPI->getAchievementDetails($user, $game));
+$res = $steamAPI->getAchievementDetails($user, $game);
+
+json_encode($res);
 ?>
