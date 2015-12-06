@@ -19,23 +19,15 @@
 				// If we are already there and an email was provided, add 
 				// account to the database with details
 
-				// Connect to MySQL database
-				$db = new mysqli('localhost', 'root', 'greatunihack', 'AchievementDatabase');
-				if($db->connect_errno > 0){
-				    die('Unable to connect to database [' . $db->connect_error . ']');
-				}
-
 				// Get more information about the player
 				include_once "SteamAPI.class.php";
 				$steamAPI = new SteamAPI();
 				$playerSummary = $steamAPI->getPlayerInfo($_SESSION['steamID']);
 				
 				// Create new user
-				$insert = $db->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
-				$insert->bind_param("sss", $_SESSION['steamID'], $_POST['email'], $playerSummary['response']['players'][0]['personaname']);
-				$insert->execute();
-
-				$db->close();
+				include_once 'db.class.php';
+				$db = new DB();
+				$db->createUser($_SESSION['steamID'], $_POST['email'], $playerSummary['response']['players'][0]['personaname']);
 
 				// Update session variables
 				$_SESSION['email'] = $_POST['email'];
@@ -57,11 +49,9 @@
 			// Echo steam ID if login was successful
 			if ($loginAttempt != '')
 			{
-				// Connect to MySQL database
-				$db = new mysqli('localhost', 'root', 'greatunihack', 'AchievementDatabase');
-				if($db->connect_errno > 0){
-				    die('Unable to connect to database [' . $db->connect_error . ']');
-				}
+				include_once 'db.class.php';
+				$dbclass = new DB();
+				$db = $dbclass->getConnection();
 
 				// Check if the user exists already
 				if ($result = $db->query("SELECT email FROM Users WHERE steamID=$loginAttempt")) 
