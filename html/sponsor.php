@@ -106,10 +106,11 @@ ini_set("display_errors", 1);
 
     function initAchievements () {
         $.get("/login/getUserAchievements.php?user=" +
-              $('#hidden_id').attr('value')) + '&game=' +
+              $('#hidden_id').attr('value') + '&game=' +
               $('#appID').attr('value'), function (data) {
+
                   console.log(data);
-              };
+              });
     }
 
 
@@ -124,8 +125,8 @@ ini_set("display_errors", 1);
     element.typeahead();
     connectTypeahead(element, "/login/getUserNames.php?typed=",
                      function (item) {
-                         $('#charity').attr('placeholder', item.charity_name);
-                         $('#hidden_id').attr('value', item.steamID);
+                         $('#charity').attr('placeholder'), item.charity_name);
+                         $('#hidden_id').attr('value'), item.steamID);
 
                          initAchievements();
 
