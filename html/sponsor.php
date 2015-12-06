@@ -137,7 +137,7 @@ ini_set("display_errors", 1);
                   element.typeahead();
                   element.data('typeahead').source = temp;
                   element.data('typeahead').updater = function (item) {
-                      $('#appID').attr('value', item.appid);
+                      $('#appID').val(item.appid);
                       $('#game').val(item.name);
 
                       initAchievements();
