@@ -43,7 +43,9 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="images/challenge.png" alt="Challenge" width="140" height="140">
+        	<a href="sponsor.php">
+          	<img class="img-circle" src="images/challenge.png" alt="Challenge" width="140" height="140">
+          </a>
           <h2>Challenge</h2>
           <p>Pose a challenge to a friend or streamer to beat an achievement and place a bounty on its completion. You can place as many bounties as you want, at amounts of your choosing depending on what you think the difficulty of the achievement warrants</p>
         </div><!-- /.col-lg-4 -->
