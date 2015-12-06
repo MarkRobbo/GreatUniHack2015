@@ -100,7 +100,7 @@
                                  + item.steamID +
                                  "&game=" + $('#appID').attr('value'),
                                  function (data) {
-                                     var temp;
+                                     var temp = [];
 
                                      data = JSON.parse(data);
 
