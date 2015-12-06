@@ -27,7 +27,7 @@
           <input type="text" id="charity" data-provide="typeahead"
                  autocomplete="off" class="form-control"
                  placeholder="Charity goal"></input>
-          <input class="hidden" id="charity_id">
+          <input class="hidden" id="charity_id" name="charity_ID">
           <input type="submit" value="Submit">
         </form>
       </div>
@@ -47,12 +47,11 @@
       element = $('#charity');
       connectTypeahead(element, "/login/getCharities.php?typed=",
                        function (data) {
-                           console.log(hidden);
-                           console.log(data);
                            var id = data.charitySearchResults.find(function(e) {
                                return e.name === element.val();
                            });
 
+                           console.log(element.val());
                            console.log(id);
                            hidden.val(id);
       });
