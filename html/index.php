@@ -53,7 +53,7 @@
         	<a href="player.php">
 		        <img class="img-circle" src="images/steam.png" alt="Play" width="140" height="140">
           </a>
-          <h2 href="player.php">Play</h2>
+          <h2><a href="player.php">Play</a></h2>
           <p>Complete challenges given to you by others to secure the reward (or multiple rewards) for charity.</p>
           <p>We will check you have actually completed the achievement through Steam's API</p>
         </div><!-- /.col-lg-4 -->
