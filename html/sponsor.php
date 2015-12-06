@@ -92,7 +92,7 @@
 
       element = $('#player');
       element.typeahead();
-
+'
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
@@ -115,9 +115,8 @@
                                      console.log(temp);
 
                                      element = $('#achievement');
-                                     element.typeahead({
-                                         source: temp
-                                     });
+                                     element.typeahead();
+                                     element.data('typeahead').source = temp;
                                  });
       });
     </script>
