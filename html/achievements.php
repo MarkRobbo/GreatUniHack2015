@@ -28,7 +28,8 @@
               <tr>
                 <th>Game</th>
                 <th>Achievement</th>
-                <th>Charity</th>
+                <th>Challenged By</th>
+                <th>Bounty</th>
                 <th>Done?</th>
               </tr>
             </thead>
@@ -37,7 +38,8 @@
 
                 <td>Osu!</td>
                 <td>Beat rrtyui's score in "Image Material"</td>
-                <td>That cancer thing</td>
+                <td>derp</td>
+                <td>10.00</td>
                 <td><a class="tick" href="javascript:void(0)"
                        title="Done">
                     <i class="glyphicon glyphicon-ok"></i>
