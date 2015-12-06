@@ -37,10 +37,10 @@
 				$_SESSION['email'] = $_POST['email'];
 				$_SESSION['activated'] = true;
 			}
-			if (!$atNewUserPage)
+			if (!$atNewUserPage && basename($_SERVER['PHP_SELF']) != 'index.php')
 			{
 				// Redirect to ask for email page if we are not already there
-				header('location: /newAccount.php?redirected');
+				header('location: /newAccount.php');
 			}
 		}
 
