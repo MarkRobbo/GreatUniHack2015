@@ -10,10 +10,8 @@ function connectTypeahead (element, source) {
         console.log(data);
         console.log(strings);
 
-        console.log("It updated!");
-
         element.typeahead({
-            source: strings
+            source: ["Another", "Test"];
         });
     });
 }
