@@ -49,7 +49,6 @@
           </table>
         </div>
       </div>
-    </div>
 
       <div class="row">
         <h1 class="row page-header">Challenges Given to You</h1>
@@ -83,6 +82,7 @@
           </table>
         </div>
       </div>
+    </div>
     </div>
 
     <script src="/js/jquery.min.js"></script>
