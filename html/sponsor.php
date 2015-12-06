@@ -106,7 +106,7 @@ ini_set("display_errors", 1);
 
     function initAchievements () {
         $.get("/login/getUserAchievements.php?user=" +
-              $('#hidden_id'.attr('value')) + '&game=' +
+              $('#hidden_id').attr('value')) + '&game=' +
               $('#appID').attr('value'), function (data) {
                   console.log(data);
               });
