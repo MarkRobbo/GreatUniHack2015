@@ -115,7 +115,7 @@
                                      console.log(temp);
 
                                      element = $('#achievement');
-                                     element.typehead({
+                                     element.typeahead({
                                          source: temp
                                      });
                                  });
