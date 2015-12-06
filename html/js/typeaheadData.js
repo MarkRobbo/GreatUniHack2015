@@ -25,6 +25,8 @@ function connectTypeahead (element, source, next) {
                     });
                 else
                     var el = data.find(function (e) {
+                        console.log(item);
+                        console.log(e.name);
                         return e.name === item;
                     });
 
