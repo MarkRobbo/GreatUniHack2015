@@ -1,5 +1,12 @@
 <?php
    include_once 'login/validateLogin.php';
+
+   include_once 'db.class.php';
+
+   $db = new DB();
+
+$db->addPledge($_SESSION["steamID"], $_POST["player"], $_POST["game"],
+               $_POST["achievement"], $_POST["amount"]);
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +61,7 @@
 
           <div class="form-group">
             <label for="game">Game</label>
-            <input type="text" class="form-control"
+            <input type="text" class="form-control" name="game"
                    id="game" placeholder="Team Fortress 2" disabled></input>
           </div>
 
@@ -67,6 +74,13 @@
                    class="form-control"
                    placeholder="The achievement"></input>
           </div>
+
+          <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" autocomplete="off" id="amount"
+                   class="form-control" placeholder="Payment amount"></input>
+          </div>
+
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge
           </button>
