@@ -8,6 +8,7 @@ function connectTypeahead (element, source) {
         });
 
         console.log(strings);
+        console.log(element);
 
         element.typeahead({
             source: strings
