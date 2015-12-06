@@ -7,5 +7,5 @@ $steamAPI = new SteamAPI();
 
 $res = $steamAPI->getGamesOwned($user);
 
-echo json_encode($res);
+var_dump($res);
 ?>
