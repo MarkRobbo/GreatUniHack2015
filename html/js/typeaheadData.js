@@ -18,6 +18,7 @@ function connectTypeahead (element, source, next) {
                 });
 
             element.data('typeahead').source = strings;
+            $.data(element, 'basedata', data);
 
             if (next)
                 next(data);
