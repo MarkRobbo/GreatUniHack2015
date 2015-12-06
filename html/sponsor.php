@@ -33,7 +33,8 @@
             <div class="form-group">
               <label for="player">Player</label>
               <input type="text" class="form-control" name="player"
-                     id="player" placeholder="Player"></input>
+                     id="player" placeholder="Player" autocomplete="off">
+              </input>
             </div>
         </div>
       </div>
