@@ -29,11 +29,12 @@
 
       <div class="row">
         <div class="col-md-12">
-          <div class="form-group">
-            <label for="player">Player</label>
-            <input type="text" class="form-control"
-                   id="player" placeholder="Player"></input>
-          </div>
+          <form action="sponsor.php" method="POST" role="form">
+            <div class="form-group">
+              <label for="player">Player</label>
+              <input type="text" class="form-control" name="player"
+                     id="player" placeholder="Player"></input>
+            </div>
         </div>
       </div>
 
@@ -57,11 +58,11 @@
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
-            <input type="text" data-provide="typeahead"
+            <input type="text" data-provide="typeahead" name="achievement"
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
                    placeholder="Something you want your player to
-achieve in a video game."></input>
+                                achieve in a video game."></input>
           </div>
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge

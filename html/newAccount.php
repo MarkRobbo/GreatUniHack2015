@@ -23,7 +23,8 @@
         <p>To begin making or accepting challenges, please provide your email address:</p>
         <form action="newAccount.php" method="POST">
           Email:<br>
-          <input type="email" name="email"></input>
+          <input type="email" name="email" class="form-control"
+                 placeholder="E-Mail"></input>
           <input type="text" id="charity" data-provide="typeahead"
                  autocomplete="off" class="form-control"
                  placeholder="Charity goal"></input>
