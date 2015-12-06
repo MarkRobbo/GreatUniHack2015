@@ -79,26 +79,31 @@ achieve in a video game."></input>
     <script src="/js/typeaheadData.js"></script>
 
     <script type="text/javascript">
-            var element;
-            var source;
+      var element;
+      var source;
+      var count;
 
-            $('#player').keypress(function (e) {
-                if (e.which == 13)
-                    $('#player_details').removeClass('hidden');
-            });
+      $('#player').keypress(function (e) {
+          if (e.which == 13)
+              $('#player_details').removeClass('hidden');
+      });
 
-            <!-- element = $('#player'); -->
-            <!-- source = ["stuff", "that", "should", "be", "player", "names"]; -->
+    <!-- element = $('#player'); -->
+    <!-- source = ["stuff", "that", "should", "be", "player", "names"]; -->
 
-            <!-- connectTypeahead(element, source); -->
+    <!-- connectTypeahead(element, source); -->
 
-            element = $('#achievement');
+    element = $('#achievement');
 
-            element.keypress(function (e) {
-                connectTypeahead(element,
-                                 "/login/getCharities.php?typed="
-                                 + element.html());
-            });
+    element.keypress(function (e) {
+        if (count % 3 == 0)
+            connectTypeahead(element,
+                             "/login/getCharities.php?typed="
+                             + element.html());
+
+        count++;
+        console.log(count);
+    });
 
     </script>
 
