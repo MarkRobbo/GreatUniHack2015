@@ -109,7 +109,7 @@ ini_set("display_errors", 1);
               $('#hidden_id').attr('value')) + '&game=' +
               $('#appID').attr('value'), function (data) {
                   console.log(data);
-              });
+              };
     }
 
 
