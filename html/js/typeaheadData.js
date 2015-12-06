@@ -5,6 +5,8 @@ function connectTypeahead (element, source) {
         $.get(source + element.val(), function(data) {
             var strings = [];
 
+            console.log(data);
+
             data = JSON.parse(data);
 
             if (data == null)
@@ -15,8 +17,6 @@ function connectTypeahead (element, source) {
             });
 
             console.log(strings);
-            console.log(element);
-            console.log(source);
 
             element.data('typeahead').source = strings;
         });
