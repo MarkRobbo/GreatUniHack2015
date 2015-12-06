@@ -34,6 +34,12 @@
                 <th>Charity</th>
                 <th>Done?</th>
               </tr>
+              <tr>
+                <td>Osu!</td>
+                <td>Beat rrtyui's score in "Image Material"</td>
+                <td>That cancer thing</td>
+                <td>Nope.</td>
+              </tr>
             </table>
           </div>
         </div>
