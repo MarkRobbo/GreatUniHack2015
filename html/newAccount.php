@@ -47,7 +47,7 @@
       element = $('#charity');
       element.typeahead();
 
-      element.bind('typeahead:select', function (ev, suggestion) {
+      element.on('typeahead:select', function (ev, suggestion) {
           console.log(suggestion);
       });
 
