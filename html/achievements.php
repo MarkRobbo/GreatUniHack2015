@@ -51,14 +51,30 @@
     $fromUser = $db->getUserDetails($row['fromUser']);
     echo '<td>' . $fromUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
+    if ($row['completed'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      echo '<td><a class="cross" href="javascript:void(0)"
+                         title="No">
+                      <i class="glyphicon glyphicon-remove"></i>
+                  </a></td>';
+    }
+    if ($row['paid'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      echo '<td><a class="cross" href="javascript:void(0)"
+                         title="No">
+                      <i class="glyphicon glyphicon-remove"></i>
+                  </a></td>';
+    }
     echo '<tr>';
   }
 ?>
@@ -96,14 +112,30 @@
     $toUser = $db->getUserDetails($row['toUser']);
     echo '<td>' . $toUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
+    if ($row['completed'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      echo '<td><a class="cross" href="javascript:void(0)"
+                         title="No">
+                      <i class="glyphicon glyphicon-remove"></i>
+                  </a></td>';
+    }
+    if ($row['paid'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      echo '<td><a class="cross" href="javascript:void(0)"
+                         title="No">
+                      <i class="glyphicon glyphicon-remove"></i>
+                  </a></td>';
+    }
     echo '<tr>';
   }
 ?>
