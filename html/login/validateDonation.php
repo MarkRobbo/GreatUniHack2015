@@ -6,7 +6,7 @@
 	{
 		$donationID = $_GET['jgDonationId'];
 
-		include_once 'justGivingAPI.class.php';
+		include_once 'JustGivingAPI.class.php';
 		$jg = new JustGivingAPI();
 
 		// Get donation info with the API
