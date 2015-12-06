@@ -23,7 +23,10 @@ function connectTypeahead (element, source, next) {
                     return e.charityDisplayName === item;
                 });
 
-                next(el);
+                console.log(el.charityId);
+
+                if (next)
+                    next(el);
             }
         });
     });
