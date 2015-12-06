@@ -28,14 +28,6 @@ class DB
 		return $result->fetch_assoc();
 	}
 
-	// Get an associative array with all the user names
-	public static function getUsers($name)
-	{
-		$query = "SELECT name FROM Users";
-		$result = $this->connection->query($query);
-		return $result->fetch_assoc();
-	}
-
 	function getConnection()
 	{
 		return $connection;
