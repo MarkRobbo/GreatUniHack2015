@@ -27,6 +27,8 @@ function connectTypeahead (element, source, next) {
 
                 if (next)
                     next(el);
+
+                return item;
             }
         });
     });
