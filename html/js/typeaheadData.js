@@ -1,8 +1,11 @@
 function connectTypeahead (element, source) {
     $.get(source, function(data) {
-        data = JSON.parse(data);
+        var string = [];
 
-        console.log(data);
+        data = JSON.parse(data);
+        data.forEach(function (e, i) {
+            string[i] = e.charityDisplayName;
+        });
 
         element.typeahead({
             source: data
