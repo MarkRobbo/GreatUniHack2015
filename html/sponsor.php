@@ -89,7 +89,7 @@
               $('#player_details').removeClass('hidden');
           }
       });
-'
+
       element = $('#player');
       element.typeahead();
 
