@@ -89,20 +89,26 @@
               $('#player_details').removeClass('hidden');
           }
       });
-
+'
       element = $('#player');
       element.typeahead();
 
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
-                       });
+                           $.get("/login/getUserAchievements.php",
+                                 function (data) {
+                                     console.log(data);
+
+                                     // element = $('#achievement');
+                                     // element.typehead();
+                                 });
+      });
 
       element = $('#achievement');
       element.typeahead();
 
       connectTypeahead(element, "/login/getCharities.php?typed=");
-
     </script>
 
   </body>
