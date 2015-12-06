@@ -84,7 +84,7 @@ achieve in a video game."></input>
               $('#player_details').removeClass('hidden');
       });
 
-    <!-- element = $('#player'); -->
+    element = $('#player');
     <!-- source = ["stuff", "that", "should", "be", "player", "names"]; -->
 
     <!-- connectTypeahead(element, source); -->

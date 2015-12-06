@@ -7,7 +7,7 @@ function connectTypeahead (element, source) {
 
             data = JSON.parse(data);
 
-            if (data.charitySearchResults == null)
+            if (data == null)
                 return;
 
             data.charitySearchResults.forEach(function (e, i) {
