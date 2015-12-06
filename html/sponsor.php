@@ -17,14 +17,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="row page-header">Username</h1>
+          <h1 class="row page-header">Challenge Another Player</h1>
         </div>
       </div>
 
       <div class="row">
         <h5 class="col-md-6">
-          Welcome! You can manage your sponsoring here. First,
-          pick a player to sponsor (all input boxes have dropdown lists).
+          Welcome! You can manage your sponsoring here. First, type a player's steam name to challenge who is registered with us:
         </h5>
       </div>
 
