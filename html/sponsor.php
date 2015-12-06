@@ -69,7 +69,7 @@ ini_set("display_errors", 1);
                    id="game" placeholder=""></input>
           </div>
 
-          <input type="hidden" value="440" name="appID" id="appID">
+          <input type="hidden" value="" name="appID" id="appID">
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
