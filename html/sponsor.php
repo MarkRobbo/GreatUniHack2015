@@ -55,7 +55,7 @@
           <div class="form-group">
             <label for="game">Game</label>
             <input type="text" class="form-control"
-                   id="game" value="Team Fortress 2" disabled></input>
+                   id="game" placeholder="Team Fortress 2" disabled></input>
           </div>
 
           <input type="hidden" value="440" name="appID" id="appID">
