@@ -1,11 +1,14 @@
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
    include_once 'login/validateLogin.php';
    include_once 'login/db.class.php';
 
    $db = new DB();
 
-$db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["game"],
-               $_POST["achievement"], $_POST["amount"]);
+   if ($_POST["amount"] > 0)
+    $db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["appID"],
+                    $_POST["achievement"], $_POST["amount"]);
 ?>
 <!DOCTYPE html>
 <html>

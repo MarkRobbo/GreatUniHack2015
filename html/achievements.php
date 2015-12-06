@@ -42,24 +42,41 @@
 
   $db = new DB();
   $steamAPI = new SteamAPI();
+  $JGAPI = new JustGivingAPI();
 
-  foreach ($db->getChallengesFor($_SESSION['steamID']) as $row)
+  foreach ($db->getChallengesMadeBy($_SESSION['steamID']) as $row)
   {
     echo '<tr>';
     echo '<td>' . $steamAPI->getGameName($row['appID']) . '</td>';
     echo '<td>' . $row['Achievement'] . '</td>';
-    $fromUser = $db->getUserDetails($row['fromUser']);
-    echo '<td>' . $fromUser['name'] . '</td>';
+    $toUser = $db->getUserDetails($row['toUser']);
+    echo '<td>' . $toUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
-    echo '<tr>';
+    if ($row['completed'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      echo '<td><a class="cross" href="javascript:void(0)"
+                         title="No">
+                      <i class="glyphicon glyphicon-remove"></i>
+                  </a></td>';
+    }
+    if ($row['paid'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      if ($_row['completed'] == 0)
+        echo '<td>Not Needed Yet</td>';
+      else
+        echo '<td><a href="' . $JGAPI->getDonationLink($toUser['charity_ID'], $row['amount'], $row['pledgeID'] . '">Donate Now!</a></td>');
+    }
+    echo '</tr>';
   }
 ?>
             </tbody>
@@ -88,23 +105,39 @@
             </thead>
             <tbody>
 <?php
-  foreach ($db->getChallengesMadeBy($_SESSION['steamID']) as $row)
+  foreach ($db->getChallengesFor($_SESSION['steamID']) as $row)
   {
     echo '<tr>';
     echo '<td>' . $steamAPI->getGameName($row['appID']) . '</td>';
     echo '<td>' . $row['Achievement'] . '</td>';
-    $toUser = $db->getUserDetails($row['toUser']);
-    echo '<td>' . $toUser['name'] . '</td>';
+    $fromUser = $db->getUserDetails($row['fromUser']);
+    echo '<td>' . $fromUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
-    echo '<td><a class="tick" href="javascript:void(0)"
-                       title="Done">
-                    <i class="glyphicon glyphicon-ok"></i>
-                </a></td>';
-    echo '<tr>';
+    if ($row['completed'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      echo '<td><a class="cross" href="javascript:void(0)"
+                         title="No">
+                      <i class="glyphicon glyphicon-remove"></i>
+                  </a></td>';
+    }
+    if ($row['paid'] == 1)
+    {
+      echo '<td><a class="tick" href="javascript:void(0)"
+                         title="Yes">
+                      <i class="glyphicon glyphicon-ok"></i>
+                  </a></td>';
+    } else {
+      echo '<td><a class="cross" href="javascript:void(0)"
+                         title="No">
+                      <i class="glyphicon glyphicon-remove"></i>
+                  </a></td>';
+    }
+    echo '</tr>';
   }
 ?>
             </tbody>
