@@ -53,6 +53,7 @@
                                return e.name === element.val();
                            });
 
+                           console.log(id);
                            hidden.val(id);
       });
 
