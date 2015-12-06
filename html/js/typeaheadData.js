@@ -10,8 +10,9 @@ function connectTypeahead (element, source) {
         console.log(strings);
         console.log(element);
 
+        element.typeahead('destroy');
         element.typeahead({
-            source: strings
+            local: strings
         });
     });
 }
