@@ -23,11 +23,8 @@
       <div class="row">
         <div class="col-md-12">
           <div class="btn-group btn-group-justified" role="group">
-            <a href="sponsor.php">
-              <div class="btn btn-default">Donate</div>
-            </a>
             <a href="player.php">
-              <div class="btn btn-default">Manage game and charity settings</div>
+              <div class="btn btn-default">Change Preferred Charity</div>
             </a>
             <a href="?logout=1">
               <div class="btn btn-default">Logout</div>
