@@ -1,6 +1,6 @@
 function connectTypeahead (element, source) {
     $.get(source, function(data) {
-        var string = [];
+        var strings = [];
 
         data = JSON.parse(data);
         [].forEach.call(data, function (e, i) {
@@ -8,6 +8,7 @@ function connectTypeahead (element, source) {
         });
 
         console.log(data);
+        console.log(strings);
 
         element.typeahead({
             source: data
