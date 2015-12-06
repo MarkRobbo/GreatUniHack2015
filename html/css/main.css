@@ -29,3 +29,7 @@ body {
     color: #fff;
     text-decoration: none;
 }
+
+.h1 {
+		font-weight: bold;
+}
