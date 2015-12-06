@@ -20,11 +20,11 @@ class DB
 		$insert->execute();
 	}
 
-	// Get an associative array with all the user names
+	// Get an associative array with all the user names, steam ID and charity ID that match
 	public function getUsers($like)
 	{
 		$this->connection->real_escape_string($like);
-		$query = "SELECT name, steamID FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
+		$query = "SELECT name, steamID, charity_ID FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
 		$result = $this->connection->query($query);
 		$results_array = array();
 		while ($row = $result->fetch_assoc()) {
