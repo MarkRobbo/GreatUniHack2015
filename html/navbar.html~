@@ -25,7 +25,6 @@
       <li><a href="sponsor.php">Make a Challenge</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    	<div class="avatar-icon">
           <?php if (isset($_SESSION['steamID'])) { echo '<a href="user.php" class="pull-right icon-wrapper"><img src="' . $_SESSION['avatar'] . '" width="32" height="32" id="avatar" alt="avatar"></a>'; } ?>
           <li><?php
             if (isset($_SESSION['steamID']))
@@ -33,7 +32,6 @@
             else
               include 'login/signInButton.include.php';
           ?></li>
-    	</div>
     </ul>
   </div>
 </nav>

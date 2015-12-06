@@ -41,3 +41,7 @@ body {
 .carousel-caption p {
 		font-size: 18px;
 }
+
+.avatar-icon {
+		padding-top: 5px;
+}
