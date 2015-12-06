@@ -95,7 +95,7 @@ achieve in a video game."></input>
     element = $('#achievement');
 
     element.keypress(function (e) {
-        count = element.html().length;
+        count = element.val().length;
 
         if (count % 3 == 0)
             connectTypeahead(element,
