@@ -7,5 +7,5 @@ $jgAPI = new JustGivingAPI();
 
 $charityNames = $jgAPI->searchCharities($searchString, 10);
 
-echo $charityNames;
+var_dump($charityNames);
 ?>
