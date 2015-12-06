@@ -1,6 +1,6 @@
 <?php
    include_once 'login/validateLogin.php';
-   include_once '/login/db.class.php';
+   include_once 'login/db.class.php';
 
    $db = new DB();
 
