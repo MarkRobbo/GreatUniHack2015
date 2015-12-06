@@ -137,7 +137,7 @@
                       <i class="glyphicon glyphicon-remove"></i>
                   </a></td>';
     }
-    echo '<tr>';
+    echo '</tr>';
   }
 ?>
             </tbody>
