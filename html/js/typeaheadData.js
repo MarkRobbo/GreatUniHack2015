@@ -19,7 +19,7 @@ function connectTypeahead (element, source, next) {
 
             element.data('typeahead').source = strings;
             element.data('typeahead').updater = function (item) {
-                if (data.charitySearchResults !=== undefined)
+                if (data.charitySearchResults !== undefined)
                     var el = data.charitySearchResults.find(function (e) {
                         return e.charityDisplayName === item;
                     });
