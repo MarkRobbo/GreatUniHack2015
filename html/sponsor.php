@@ -98,7 +98,8 @@
                            $('#charity').attr('placeholder', item.charity_name);
                            console.log(item);
                            $.get("/login/getUserAchievements.php?user="
-                                 + steamID + "&game=" + '440',
+                                 + steamID +
+                                 "&game=" + $('#appID').attr('value'),
                                  function (data) {
                                      console.log(data);
 
