@@ -66,7 +66,8 @@ ini_set("display_errors", 1);
           <div class="form-group">
             <label for="game">Game</label>
             <input type="text" class="form-control" name="game"
-                   id="game" placeholder=""></input>
+                   autocomplete="off"
+                   id="game" placeholder="Game"></input>
           </div>
 
           <input type="hidden" value="" name="appID" id="appID">
