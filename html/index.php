@@ -11,10 +11,11 @@
 
   </head>
   <body>
-
-    <?php
-       include('navbar.html');
-    ?>
+    <div class="navbar-wrapper">
+      <?php
+         include('navbar.html');
+      ?>
+    </div>
 
     <!-- 1 slide carousel so far
     ================================================== -->
