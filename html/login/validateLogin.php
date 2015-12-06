@@ -27,7 +27,7 @@
 				// Create new user
 				include_once 'db.class.php';
 				$db = new DB();
-				$db->createUser($_SESSION['steamID'], $_POST['email'], $playerSummary['response']['players'][0]['personaname']);
+				$db->createUser($_SESSION['steamID'], $_POST['email'], $playerSummary['personaname']);
 
 				// Update session variables
 				$_SESSION['email'] = $_POST['email'];
@@ -85,14 +85,13 @@
 						$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
 
 						// Store avatar and name
-						$_SESSION['name'] = $playerSummary['response']['players'][0]['personaname'];
-						$_SESSION['avatar'] = $playerSummary['response']['players'][0]['avatarfull'];
+						$_SESSION['name'] = $playerSummary['personaname'];
+						$_SESSION['avatar'] = $playerSummary['avatarfull'];
 
 						// Now we need to redirect back
 						header('location: /');
 					}
 				}
-
 				$db->close();
 			}
 			else

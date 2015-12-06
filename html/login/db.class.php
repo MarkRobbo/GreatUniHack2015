@@ -28,11 +28,13 @@ class DB
 		return $result->fetch_assoc();
 	}
 
+	// Get the database connection for use outside of the class
 	function getConnection()
 	{
 		return $this->connection;
 	}
 
+	// Close the database connection when finished
 	function __destruct ()
 	{
 		$db->close();
