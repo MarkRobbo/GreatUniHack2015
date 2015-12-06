@@ -12,6 +12,7 @@ ini_set("error_log", "/tmp/php-error.log");
 	// Option to logout
 	if (isset($_GET['logout']))
 	{
+		$_SESSION = array();
 		session_destroy();
 	}
 	else
