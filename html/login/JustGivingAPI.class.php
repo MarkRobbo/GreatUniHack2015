@@ -42,7 +42,7 @@
 			        'method' => 'GET',
 			        'header' => "Accept: application/json\r\nContent-type: application/json")
 			));
-			$apiResponse = file_get_contents("https://api.justgiving.com/" . self::APP_ID . "/v1/donation/ref/" . urlencode($code), false, $context);
+			$apiResponse = file_get_contents("https://v3-sandbox.justgiving.com/" . self::APP_ID . "/v1/donation/ref/" . urlencode($code), false, $context);
 			return json_decode($apiResponse, true);
 		}
 
