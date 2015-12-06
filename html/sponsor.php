@@ -81,7 +81,6 @@ achieve in a video game."></input>
     <script type="text/javascript">
       var element;
       var source;
-      var count;
 
       $('#player').keypress(function (e) {
           if (e.which == 13)
@@ -96,10 +95,12 @@ achieve in a video game."></input>
     element = $('#achievement');
 
     element.keypress(function (e) {
+        count = element.html().length;
+
         if (count % 3 == 0)
             connectTypeahead(element,
                              "/login/getCharities.php?typed="
-                             + element.html());
+                             + element.val());
 
         count++;
         console.log(count);
