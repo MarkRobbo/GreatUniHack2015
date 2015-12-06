@@ -31,7 +31,7 @@
 		// Get donation link for a charity, choosing a unique reference (should be an ID of the pledge to link them)
 		public static function getDonationLink($charityID, $amount, $reference)
 		{
-			return "http://v3sandbox.justgiving.com/4w350m3/donation/direct/charity/" . urlencode($charityID) ."/?amount=" . urlencode($amount) ."&exitUrl=http%3A%2F%2F46.101.29.75%3FjgDonationId%3DJUSTGIVING-DONATION-ID&currency=GBP&reference=" . urlencode($reference) . "&defaultMessage=AchieveForGood&utm_source=sdidirect&utm_medium=buttons&utm_campaign=buttontype";
+			return "http://v3-sandbox.justgiving.com/4w350m3/donation/direct/charity/" . urlencode($charityID) ."/?amount=" . urlencode($amount) ."&exitUrl=http%3A%2F%2F46.101.29.75%2Flogin%2FconfirmDonation.php%3FjgDonationId%3DJUSTGIVING-DONATION-ID&currency=GBP&reference=" . urlencode($reference) . "&defaultMessage=AchieveForGood&utm_source=sdidirect&utm_medium=buttons&utm_campaign=buttontype";
 		}
 
 	}
