@@ -126,7 +126,7 @@ ini_set("display_errors", 1);
     connectTypeahead(element, "/login/getUserNames.php?typed=",
                      function (item) {
                          $('#charity').attr('placeholder', item.charity_name);
-                         $('#hidden_id').attr('value', item.steamID);
+                         $('#hidden_id').attr('value'), item.steamID);
 
                          initAchievements();
 
