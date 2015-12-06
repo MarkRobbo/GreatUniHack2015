@@ -131,7 +131,7 @@ ini_set("display_errors", 1);
                                              temp.push(e.name);
                                          });
 
-                                     element.typeahaed();
+                                     element.typeahead();
                                      element.data('typeahead').source = temp;
                                  });
 
