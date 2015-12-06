@@ -7,14 +7,13 @@
 		$donationID = $_GET['jgDonationId'];
 
 		include_once 'justGivingAPI.class.php';
-		$jg = new justGivingAPI();
+		$jg = new JustGivingAPI();
 
 		// Get donation info with the API
 		$donationInfo = $jg->getDonationInfo($donationID);
 		echo '<pre>';
 		print_r($donationInfo);
 		echo '</pre>';
-
 	}
 	else
 	{
