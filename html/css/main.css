@@ -13,8 +13,8 @@
     margin-right: 10px;
 }
 
-ul .nav .navbar-nav .navbar-right {
-    margin-right: 0!important;
+.navbar-right {
+    margin-right: 0 !important;
 }
 
 .navbar-brand-text {
