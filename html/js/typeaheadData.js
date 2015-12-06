@@ -7,7 +7,6 @@ function connectTypeahead (element, source) {
             strings[i] = e.charityDisplayName;
         });
 
-        console.log(data);
         console.log(strings);
 
         element.typeahead({

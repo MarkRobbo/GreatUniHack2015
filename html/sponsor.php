@@ -94,7 +94,10 @@ achieve in a video game."></input>
 
             element = $('#achievement');
 
-            connectTypeahead(element, "/login/getCharities.php?typed=char");
+            element.keypress(function (e) {
+                connectTypeahead(element, "/login/getCharities.php?typed=char");
+            });
+
     </script>
 
   </body>
