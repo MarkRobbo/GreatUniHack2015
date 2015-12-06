@@ -23,7 +23,8 @@
 
       <div class="row">
         <h5 class="col-md-6">
-          Welcome! You can manage your sponsoring here. First, type a player's steam name to challenge who is registered with us:
+          Welcome! You can manage your sponsoring here. First, choose a player
+          whom you'd like to challenge:
         </h5>
       </div>
 
@@ -41,7 +42,8 @@
 
       <div id="player_details" class="row hidden">
         <h5 class="col-md-12">
-          Now choose the achievement you would like the player to complete to collect your bounty for charity:
+          Now choose the achievement you would like the player to complete to
+          collect your bounty for charity:
         </h5>
 
         <div class="col-md-12">
@@ -85,13 +87,16 @@
           if (e.which == 13) {
               e.preventDefault();
               $('#player_details').removeClass('hidden');
-      }
+          }
       });
 
       element = $('#player');
       element.typeahead();
 
-      connectTypeahead(element, "/login/getUserNames.php?typed=");
+      connectTypeahead(element, "/login/getUserNames.php?typed=",
+                       function (item) {
+                           $('#charity').attr('placeholder', item.charity_name);
+                       });
 
       element = $('#achievement');
       element.typeahead();
