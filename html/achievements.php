@@ -18,7 +18,41 @@
 
     <div class="container">
       <div class="row">
-        <h1 class="row page-header">Achievements</h1>
+        <h1 class="row page-header">Challenges You Have Made</h1>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <table id="table" data-toggle="table">
+            <thead>
+              <tr>
+                <th>Game</th>
+                <th>Achievement</th>
+                <th>Challenged</th>
+                <th>Bounty</th>
+                <th>Done?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td>Osu!</td>
+                <td>Beat rrtyui's score in "Image Material"</td>
+                <td>derp</td>
+                <td>10.00</td>
+                <td><a class="tick" href="javascript:void(0)"
+                       title="Done">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+      <div class="row">
+        <h1 class="row page-header">Challenges Given to You</h1>
       </div>
 
       <div class="row">
@@ -50,7 +84,6 @@
         </div>
       </div>
     </div>
-
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
