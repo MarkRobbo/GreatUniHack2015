@@ -33,7 +33,7 @@
               <label for="charity">Charity</label>
               <input type="text" id="charity" data-provide="typeahead"
                      autocomplete="off" class="form-control" id="charity"
-                     placeholder="Charity goal"></input>
+                     placeholder="Charity Name"></input>
             </div>
             <input class="hidden" id="charity_id" name="charity_ID">
             <button form="newAccount" type="submit" value="Submit"
