@@ -56,6 +56,7 @@
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Everyone Wins!</h2>
           <p>The player gets to win donations for a well deserved charity of their choice and the challenger knows you definitely deserve it!</p>
+          <p>Donations are handled and verified by <a href="https://home.justgiving.com/">Just Giving</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
