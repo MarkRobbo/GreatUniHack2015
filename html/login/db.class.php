@@ -55,7 +55,7 @@ class DB
 	// Get the challenges for a specific user
 	public function getChallengesFor($steamID)
 	{
-		$this->connection->real_escape_string($like);
+		$this->connection->real_escape_string($steamID);
 		$query = "SELECT * FROM Pledges WHERE toUser ='" . $steamID . "'";
 		$result = $this->connection->query($query);
 		$results_array = array();
@@ -68,7 +68,7 @@ class DB
 	// Get the challenges which have been made by a specific user
 	public function getChallengesMadeBy($steamID)
 	{
-		$this->connection->real_escape_string($like);
+		$this->connection->real_escape_string($steamID);
 		$query = "SELECT * FROM Pledges WHERE fromUser ='" . $steamID . "'";
 		$result = $this->connection->query($query);
 		$results_array = array();
@@ -76,6 +76,15 @@ class DB
 		  	$results_array[] = $row;
 		}
 		return $results_array;
+	}
+
+	// Get the details of a user given steamID
+	public function getUserDetails($steamID)
+	{
+		$this->connection->real_escape_string($steamID);
+		$query = "SELECT * FROM Users WHERE steamID ='" . $steamID . "'";
+		$result = $this->connection->query($query);
+		return $result->fetch_assoc();
 	}
 
 	// Get the database connection for use outside of the class
