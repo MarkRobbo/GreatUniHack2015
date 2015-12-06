@@ -17,7 +17,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="row page-header">Challenge Another Player</h1>
+          <h1 class="row page-header">Make a Challenge</h1>
         </div>
       </div>
 
