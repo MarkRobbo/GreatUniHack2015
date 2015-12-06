@@ -49,6 +49,11 @@
                        function (data) {
                            console.log(hidden);
                            console.log(data);
+                           var id = data.charitySearchResults.find(function(e) {
+                               return e.name === element.val();
+                           });
+
+                           hidden.val(id);
       });
 
     </script>
