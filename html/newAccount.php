@@ -51,15 +51,15 @@
           console.log(suggestion);
       });
 
-      connectTypeahead(element, "/login/getCharities.php?typed=",
-                       function (data) {
-                           var id = data.charitySearchResults.find(function(e) {
-                               return e.name === element.val();
-                           });
+      connectTypeahead(element, "/login/getCharities.php?typed="//,
+                       // function (data) {
+                       //     var id = data.charitySearchResults.find(function(e) {
+                       //         return e.name === element.val();
+                       //     });
 
-                           console.log(element.val());
-                           console.log(id);
-                           hidden.val(id.charityId);
+                       //     console.log(element.val());
+                       //     console.log(id);
+                       //     hidden.val(id.charityId);
       });
 
     </script>
