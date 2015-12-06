@@ -112,8 +112,6 @@ ini_set("display_errors", 1);
               $('#appID').attr('value'), function (data) {
                   var temp = [];
 
-                  console.log($('#appID).attr('value'));
-
                   data = JSON.parse(data);
 
                   data.playerstats.achievements.forEach(function (e) {
