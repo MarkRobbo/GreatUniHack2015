@@ -7,7 +7,7 @@
     <?php
        include('header.html');
     ?>
-    <title>Achievements4Charity | Sponsor others to complete game achievements</title>
+    <title>AchieveForGood | Sponsor others to complete game achievements</title>
 
   </head>
   <body>
