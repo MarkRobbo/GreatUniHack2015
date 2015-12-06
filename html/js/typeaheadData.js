@@ -24,7 +24,7 @@ function connectTypeahead (element, source, next) {
                         return e.charityDisplayName === item;
                     });
                 else
-                    return;
+                    return item;
 
                 console.log(el.charityId);
 
