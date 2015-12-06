@@ -52,6 +52,32 @@ class DB
 		$insert->execute();
 	}
 
+	// Get the challenges for a specific user
+	public function getChallengesFor($steamID)
+	{
+		$this->connection->real_escape_string($like);
+		$query = "SELECT * FROM Pledges WHERE toUser ='" . $steamID . "'";
+		$result = $this->connection->query($query);
+		$results_array = array();
+		while ($row = $result->fetch_assoc()) {
+		  	$results_array[] = $row;
+		}
+		return $results_array;
+	}
+
+	// Get the challenges which have been made by a specific user
+	public function getChallengesMadeBy($steamID)
+	{
+		$this->connection->real_escape_string($like);
+		$query = "SELECT * FROM Pledges WHERE fromUser ='" . $steamID . "'";
+		$result = $this->connection->query($query);
+		$results_array = array();
+		while ($row = $result->fetch_assoc()) {
+		  	$results_array[] = $row;
+		}
+		return $results_array;
+	}
+
 	// Get the database connection for use outside of the class
 	public function getConnection()
 	{
