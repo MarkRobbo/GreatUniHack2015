@@ -40,32 +40,32 @@
         </div>
       </div>
 
+      <div class="form-group">
+        <label for="charity">Charity</label>
+        <input type="text" id="charity"
+               class="form-control" placeholder="" disabled></input>
+      </div>
+
       <div id="player_details" class="row hidden">
         <h5 class="col-md-12">
-          Now choose the achievement you would like the player to complete to
-          collect your bounty for charity:
+          Now choose the achievement you would like the player to complete to collect your bounty for charity:
         </h5>
 
         <div class="col-md-12">
           <div class="form-group">
             <label for="game">Game</label>
             <input type="text" class="form-control"
-                   id="game" placeholder="" disabled></input>
+                   id="game" value="Team Fortress 2" disabled></input>
           </div>
 
-          <div class="form-group">
-            <label for="charity">Charity</label>
-            <input type="text" id="charity"
-                   class="form-control" placeholder="" disabled></input>
-          </div>
+          <input type="hidden" value="440" name="appID" id="appID">
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
             <input type="text" data-provide="typeahead" name="achievement"
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
-                   placeholder="Something you want your player to
- achieve in a video game."></input>
+                   placeholder="The achivement"></input>
           </div>
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge
