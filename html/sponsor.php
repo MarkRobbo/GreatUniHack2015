@@ -29,7 +29,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <form action="sponsor.php" method="POST" role="form">
+          <form action="sponsor.php" method="POST" role="form" id="pledge">
             <div class="form-group">
               <label for="player">Player</label>
               <input type="text" class="form-control" name="player"
