@@ -154,7 +154,7 @@ ini_set("display_errors", 1);
         }
     });
 
-    $('#gamer').keypress(function (e) {
+    $('#game').keypress(function (e) {
         if (e.which === 13)
             e.preventDefault();
     });
