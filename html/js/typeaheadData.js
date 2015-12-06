@@ -12,9 +12,12 @@ function connectTypeahead (element, source) {
             if (data == null)
                 return;
 
-            data.charitySearchResults.forEach(function (e, i) {
-                strings[i] = e.charityDisplayName;
-            });
+            if (data.charitySearchResults !== null)
+                data.charitySearchResults.forEach(function (e, i) {
+                    strings[i] = e.charityDisplayName;
+                });
+            else
+                strings = data;
 
             console.log(strings);
 
