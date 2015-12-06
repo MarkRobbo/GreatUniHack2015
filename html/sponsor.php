@@ -92,7 +92,7 @@
 
       element = $('#player');
       element.typeahead();
-
+'
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
@@ -100,10 +100,17 @@
                                  + item.steamID +
                                  "&game=" + $('#appID').attr('value'),
                                  function (data) {
+                                     var temp;
+
                                      data = JSON.parse(data);
 
                                      console.log(data);
 
+                                     data.playerstats.achievements.forEach(
+                                         function (e, i) {
+                                             if (e.achieved === 0)
+                                                 temp.push(e.description);
+                                         });
                                      // element = $('#achievement');
                                      // element.typehead();
                                  });
