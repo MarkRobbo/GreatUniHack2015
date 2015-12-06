@@ -30,8 +30,8 @@ class DB
 		$results_array = array();
 		while ($row = $result->fetch_assoc()) {
 			$charityInfo = $JGAPI->getCharityByID($row['charity_ID']);
+			$row['charity_name'] = $charityInfo['name'];
 		  	$results_array[] = $row;
-		  	$results_array['charity_ID'] = $charityInfo['name'];
 		}
 		return $results_array;
 	}
