@@ -96,6 +96,7 @@
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
+                           console.log(item);
                            $.get("/login/getUserAchievements.php",
                                  function (data) {
                                      console.log(data);
