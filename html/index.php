@@ -50,8 +50,10 @@
           <p>Pose a challenge to a friend or streamer to beat an achievement and place a bounty on its completion. You can place as many bounties as you want, at amounts of your choosing depending on what you think the difficulty of the achievement warrants</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="images/steam.png" alt="Play" width="140" height="140">
-          <h2>Play</h2>
+        	<a href="player.php">
+		        <img class="img-circle" src="images/steam.png" alt="Play" width="140" height="140">
+          </a>
+          <h2 href="player.php">Play</h2>
           <p>Complete challenges given to you by others to secure the reward (or multiple rewards) for charity.</p>
           <p>We will check you have actually completed the achievement through Steam's API</p>
         </div><!-- /.col-lg-4 -->
