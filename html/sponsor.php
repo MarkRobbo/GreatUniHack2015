@@ -94,18 +94,9 @@ achieve in a video game."></input>
 
     element = $('#achievement');
 
-    element.keypress(function (e) {
-        count = element.val().length;
-
-        if (count % 3 == 0)
-            connectTypeahead(element,
-                             "/login/getCharities.php?typed="
-                             + element.val());
-
-        count++;
-        console.log(count);
-    });
-
+    connectTypeahead(element,
+                     "/login/getCharities.php?typed="
+                     + element.val());
     </script>
 
   </body>
