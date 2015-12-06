@@ -49,7 +49,9 @@
           </table>
         </div>
       </div>
+    </div>
 
+    <div class="container">
       <div class="row">
         <h1 class="row page-header">Challenges Given to You</h1>
       </div>
