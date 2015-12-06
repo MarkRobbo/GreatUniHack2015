@@ -26,9 +26,12 @@ class DB
 		$this->connection->real_escape_string($like);
 		$query = "SELECT name, steamID, charity_ID FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
 		$result = $this->connection->query($query);
+		$JGAPI = new JustGivingAPI();
 		$results_array = array();
 		while ($row = $result->fetch_assoc()) {
-		  $results_array[] = $row;
+			$charityInfo = $JGAPI->getCharityByID($row['charity_ID']);
+		  	$results_array[] = $row;
+		  	$results_array['charity_ID'] = $charityInfo['name'];
 		}
 		return $results_array;
 	}

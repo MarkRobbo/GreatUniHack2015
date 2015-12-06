@@ -16,6 +16,18 @@
 			return json_decode($apiResponse, true);
 		}
 
+		// Get charity details by ID
+		public static function getCharityByID($charityID)
+		{
+			$context = stream_context_create(array(
+			    'http' => array(
+			        'method' => 'GET',
+			        'header' => "Accept: application/json\r\nContent-type: application/json")
+			));
+			$apiResponse = file_get_contents("https://api.justgiving.com/" . self::APP_ID . "/v1/charity/" . urlencode($charityID);
+			return json_decode($apiResponse, true);
+		}
+
 		// Get donation link for a charity, choosing a unique reference (should be an ID of the pledge to link them)
 		public static function getDonationLink($charityID, $amount, $reference)
 		{
