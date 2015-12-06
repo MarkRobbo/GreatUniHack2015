@@ -23,8 +23,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <table id="table" class="table table-hover"
-                 data-toggle="table">
+          <table id="table" data-toggle="table">
             <thead>
               <tr>
                 <th>Game</th>
