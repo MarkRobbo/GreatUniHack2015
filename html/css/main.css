@@ -43,5 +43,6 @@ body {
 }
 
 .avatar-icon {
-		padding-top: 5px;
+		margin-top: auto;
+		margin-bottom: auto;
 }
