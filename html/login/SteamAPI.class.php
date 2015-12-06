@@ -16,7 +16,7 @@
 		// Get the games and details of them owned by a steam ID
 		public static function getGamesOwned($steamID)
 		{
-			$apiResponse = file_get_contents(self::BASE_URL . 'IPlayerService/GetOwnedGames/v0001/?key=' . self::API_KEY . "&steamid=" . urlencode($steamID) ."&include_appinfo=1&format=json");
+			$apiResponse = file_get_contents(self::BASE_URL . 'IPlayerService/GetOwnedGames/v0001/?key=' . self::API_KEY . "&steamid=" . urlencode($steamID) ."&include_appinfo=1&include_played_free_games=1&format=json");
 			return json_decode($apiResponse, true);
 		}
 
