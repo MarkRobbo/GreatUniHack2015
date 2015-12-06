@@ -24,7 +24,7 @@ class DB
 	public function getUsers($like)
 	{
 		$this->connection->real_escape_string($like);
-		$query = "SELECT name FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
+		$query = "SELECT name, steamID FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
 		$result = $this->connection->query($query);
 		return $result->fetch_assoc();
 	}
