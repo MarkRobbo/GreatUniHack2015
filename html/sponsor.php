@@ -87,15 +87,15 @@ achieve in a video game."></input>
                     $('#player_details').removeClass('hidden');
             });
 
-            element = $('#player');
-            source = ["stuff", "that", "should", "be", "player", "names"];
+            <!-- element = $('#player'); -->
+            <!-- source = ["stuff", "that", "should", "be", "player", "names"]; -->
 
-            connectTypeahead(element, source);
+            <!-- connectTypeahead(element, source); -->
 
             element = $('#charity');
             source = ["test", "this", "code", "some", "more"];
 
-            connectTypeahead(element, source);
+            connectTypeahead(element, "/login/getCharities.php?typed=char");
     </script>
 
   </body>
