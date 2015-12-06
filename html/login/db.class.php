@@ -30,7 +30,7 @@ class DB
 
 	function getConnection()
 	{
-		return $connection;
+		return $this->connection;
 	}
 
 	function __destruct ()
