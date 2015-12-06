@@ -92,8 +92,7 @@ achieve in a video game."></input>
 
             <!-- connectTypeahead(element, source); -->
 
-            element = $('#charity');
-            source = ["test", "this", "code", "some", "more"];
+            element = $('#achievement');
 
             connectTypeahead(element, "/login/getCharities.php?typed=char");
     </script>
