@@ -43,7 +43,7 @@
   $db = new DB();
   $steamAPI = new SteamAPI();
 
-  foreach ($db->getChallengesFor($_SESSION['steamID']) as $row)
+  foreach ($db->getChallengesMadeBy($_SESSION['steamID']) as $row)
   {
     echo '<tr>';
     echo '<td>' . $steamAPI->getGameName($row['appID']) . '</td>';
@@ -88,7 +88,7 @@
             </thead>
             <tbody>
 <?php
-  foreach ($db->getChallengesMadeBy($_SESSION['steamID']) as $row)
+  foreach ($db->getChallengesFor($_SESSION['steamID']) as $row)
   {
     echo '<tr>';
     echo '<td>' . $steamAPI->getGameName($row['appID']) . '</td>';
