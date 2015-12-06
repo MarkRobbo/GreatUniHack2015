@@ -33,7 +33,7 @@
 
         <div class="col-md-12">
           <div class="form-group">
-            <label for="charity">Charity:
+            <label for="charity">Change Preferred Charity:
             </label>
             <input type="text" class="form-control"
                    data-provide="typeahead" autocomplete="off"
