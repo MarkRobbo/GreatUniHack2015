@@ -13,7 +13,7 @@ class DB
 	}
 
 	// Create a new user
-	public static function createUser($steamID, $email, $name)
+	public function createUser($steamID, $email, $name)
 	{
 		$insert = $this->connection->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
 		$insert->bind_param("sss", $steamID, $email, $name);
@@ -21,7 +21,7 @@ class DB
 	}
 
 	// Get an associative array with all the user names
-	public static function getUsers()
+	public function getUsers()
 	{
 		$query = "SELECT name FROM Users";
 		$result = $this->connection->query($query);
@@ -29,7 +29,7 @@ class DB
 	}
 
 	// Get the database connection for use outside of the class
-	function getConnection()
+	public function getConnection()
 	{
 		return $this->connection;
 	}
