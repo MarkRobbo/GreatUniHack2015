@@ -26,6 +26,7 @@ function connectTypeahead (element, source, next) {
                 else
                     var el = data;
 
+                console.log(el);
                 console.log(el.charityId);
 
                 if (next)
