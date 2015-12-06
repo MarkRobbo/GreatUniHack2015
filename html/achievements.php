@@ -38,7 +38,8 @@
                 <td>Osu!</td>
                 <td>Beat rrtyui's score in "Image Material"</td>
                 <td>That cancer thing</td>
-                <td><input type="checkbox" aria-label="Done?"></td>
+                <td><input type="checkbox" aria-label="Done?"
+                           class="form-control"></td>
               </tr>
             </table>
           </div>
