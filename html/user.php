@@ -32,6 +32,9 @@
             <a href="achievements.php">
               <div class="btn btn-default">Manage achievements</div>
             </a>
+            <a href="?logout=1">
+              <div class="btn btn-default">Logout</div>
+            </a>
           </div>
         </div>
       </div>
