@@ -9,8 +9,19 @@
 .icon {
     width: 24px;
     height: 24px;
+    margin-top: -2px;
+    margin-right: 10px;
 }
 
-ul .nav .navbar-nav .navbar-right {
-    margin: 0!important;
+.navbar-right {
+    margin-right: 0 !important;
+}
+
+.navbar-brand-text {
+    color: #9d9d9d;
+}
+
+.navbar-brand-text:hover {
+    color: #fff;
+    text-decoration: none;
 }

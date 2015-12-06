@@ -8,6 +8,7 @@
        include('header.html');
     ?>
     <title>Achievements</title>
+    <link rel="stylesheet" href="/css/bootstrap-table.min.css"></link>
   </head>
 
   <body>
@@ -22,23 +23,39 @@
 
       <div class="row">
         <div class="col-md-12">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              All achievements that have been requested are listed
-              here. If you complete one, tick it!
-            </div>
-            <table class="table table-hover">
+          <table id="table" data-toggle="table">
+            <thead>
               <tr>
                 <th>Game</th>
                 <th>Achievement</th>
-                <th>Charity</th>
+                <th>Challenged By</th>
+                <th>Bounty</th>
                 <th>Done?</th>
               </tr>
-            </table>
-          </div>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td>Osu!</td>
+                <td>Beat rrtyui's score in "Image Material"</td>
+                <td>derp</td>
+                <td>10.00</td>
+                <td><a class="tick" href="javascript:void(0)"
+                       title="Done">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
-
     </div>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap3-typeahead.min.js"></script>
+    <script src="/js/typeaheadData.js"></script>
+    <script src="/js/bootstrap-table.min.js"></script>
   </body>
 </html>

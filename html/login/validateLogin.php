@@ -1,29 +1,29 @@
 <?php
 	session_start();
 
+	error_reporting(E_ERROR); // reports all errors
+	ini_set("display_errors", "1"); // shows all errors
+
 	include_once "SteamSignIn.class.php";
 	$steamSignIn = new SteamSignIn();
 
 	// Option to logout
 	if (isset($_GET['logout']))
 	{
+		$_SESSION = array();
 		session_destroy();
+
+		header('location: /');
 	}
 	else
 	{
 		// If the account is not activated yet, ask for their email
 		if (isset($_SESSION['steamID']) && $_SESSION['activated'] == false)
 		{
-			if ($atNewUserPage == true && isset($_POST['email']))
+			if ($atNewUserPage == true && isset($_POST['email']) && isset($_POST['charity_ID']))
 			{
 				// If we are already there and an email was provided, add 
 				// account to the database with details
-
-				// Connect to MySQL database
-				$db = new mysqli('localhost', 'root', 'greatunihack', 'AchievementDatabase');
-				if($db->connect_errno > 0){
-				    die('Unable to connect to database [' . $db->connect_error . ']');
-				}
 
 				// Get more information about the player
 				include_once "SteamAPI.class.php";
@@ -31,20 +31,20 @@
 				$playerSummary = $steamAPI->getPlayerInfo($_SESSION['steamID']);
 				
 				// Create new user
-				$insert = $db->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
-				$insert->bind_param("sss", $_SESSION['steamID'], $_POST['email'], $playerSummary['response']['players'][0]['personaname']);
-				$insert->execute();
-
-				$db->close();
+				include_once 'db.class.php';
+				$db = new DB();
+				$db->createUser($_SESSION['steamID'], $_POST['email'], $playerSummary['personaname'], $_POST['charity_ID']);
 
 				// Update session variables
 				$_SESSION['email'] = $_POST['email'];
 				$_SESSION['activated'] = true;
+
+				header('location: /');
 			}
-			if (!$atNewUserPage)
+			if (!$atNewUserPage && basename($_SERVER['PHP_SELF']) != 'index.php')
 			{
 				// Redirect to ask for email page if we are not already there
-				header('location: /newAccount.php?redirected');
+				header('location: /newAccount.php');
 			}
 		}
 
@@ -57,20 +57,30 @@
 			// Echo steam ID if login was successful
 			if ($loginAttempt != '')
 			{
-				// Connect to MySQL database
-				$db = new mysqli('localhost', 'root', 'greatunihack', 'AchievementDatabase');
-				if($db->connect_errno > 0){
-				    die('Unable to connect to database [' . $db->connect_error . ']');
-				}
+				include_once 'db.class.php';
+				$dbclass = new DB();
+				$db = $dbclass->getConnection();
 
 				// Check if the user exists already
 				if ($result = $db->query("SELECT email FROM Users WHERE steamID=$loginAttempt")) 
 				{
+					// Store steam ID
+					$_SESSION['steamID'] = $loginAttempt;
+
+					// Get more information about the player
+					include_once "SteamAPI.class.php";
+					$steamAPI = new SteamAPI();
+					$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
+
+					// Store avatar and name
+					print_r($playerSummary);
+					$_SESSION['name'] = $playerSummary['personaname'];
+					$_SESSION['avatar'] = $playerSummary['avatarfull'];
+
 					if ($result->num_rows < 1)
 					{
 						// If account doesn't exist, we need to request their email to
 						// create their account (to be implemented)
-						$_SESSION['steamID'] = $loginAttempt;
 
 						// This email isn't activated yet, we don't have the user in the database
 						$_SESSION['activated'] = false;
@@ -89,20 +99,10 @@
 						// Store the steam ID in the session variable
 						$_SESSION['steamID'] = $loginAttempt;
 
-						// Get more information about the player
-						include_once "SteamAPI.class.php";
-						$steamAPI = new SteamAPI();
-						$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
-
-						// Store avatar and name
-						$_SESSION['name'] = $playerSummary['response']['players'][0]['personaname'];
-						$_SESSION['avatar'] = $playerSummary['response']['players'][0]['avatarfull'];
-
 						// Now we need to redirect back
 						header('location: /');
 					}
 				}
-
 				$db->close();
 			}
 			else

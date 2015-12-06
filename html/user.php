@@ -7,7 +7,7 @@
     <?php
        include('header.html');
     ?>
-    <title>Username</title>
+    <title><?php echo $_SESSION['name']; ?></title>
   </head>
 
   <body>
@@ -17,22 +17,30 @@
 
     <div class="container">
       <div class="row">
-        <h1 class="row page-header">Username</h1>
+        <h1 class="row page-header"><?php echo $_SESSION['name']; ?></h1>
       </div>
 
       <div class="row">
         <div class="col-md-12">
           <div class="btn-group btn-group-justified" role="group">
-            <a href="sponsor.php">
-              <div class="btn btn-default">Donate</div>
-            </a>
-            <a href="player.php">
-              <div class="btn btn-default">Manage game and charity settings</div>
-            </a>
-            <a href="achievements.php">
-              <div class="btn btn-default">Manage achievements</div>
+            <a href="?logout=1">
+              <div class="btn btn-default">Logout</div>
             </a>
           </div>
+          <br>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="charity">Change Your Preferred Charity:
+            </label>
+            <input type="text" class="form-control"
+                   data-provide="typeahead" autocomplete="off"
+                   id="charity" placeholder="Charity"></input>
+          </div>
+          <button type="submit" form="settings" class="btn btn-primary">
+            Submit
+          </button>
+        </div>
         </div>
       </div>
     </div>

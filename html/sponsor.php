@@ -17,32 +17,33 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="row page-header">Username</h1>
+          <h1 class="row page-header">Make a Challenge</h1>
         </div>
       </div>
 
       <div class="row">
         <h5 class="col-md-6">
-          Welcome! You can manage your sponsoring here. First,
-          pick a player to sponsor (all input boxes have dropdown lists).
+          Welcome! You can manage your sponsoring here. First, choose a player
+          whom you'd like to challenge:
         </h5>
       </div>
 
       <div class="row">
         <div class="col-md-12">
-          <div class="form-group">
-            <label for="player">Player</label>
-            <input type="text" class="form-control"
-                   id="player" placeholder="Player"></input>
-          </div>
+          <form action="sponsor.php" method="POST" role="form" id="pledge">
+            <div class="form-group">
+              <label for="player">Player</label>
+              <input type="text" class="form-control" name="player"
+                     id="player" placeholder="Player" autocomplete="off">
+              </input>
+            </div>
         </div>
       </div>
 
       <div id="player_details" class="row hidden">
         <h5 class="col-md-12">
-          Now, specify exactly what your player should achieve to
-          receive your donation. The game and charity are chosen by
-          the player, but you can review them here.
+          Now choose the achievement you would like the player to complete to
+          collect your bounty for charity:
         </h5>
 
         <div class="col-md-12">
@@ -60,11 +61,11 @@
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
-            <input type="text" data-provide="typeahead"
+            <input type="text" data-provide="typeahead" name="achievement"
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
                    placeholder="Something you want your player to
-achieve in a video game."></input>
+ achieve in a video game."></input>
           </div>
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge
@@ -79,23 +80,29 @@ achieve in a video game."></input>
     <script src="/js/typeaheadData.js"></script>
 
     <script type="text/javascript">
-            var element;
-            var source;
+      var element;
+      var source;
 
-            $('#player').keypress(function (e) {
-                if (e.which == 13)
-                    $('#player_details').removeClass('hidden');
-            });
+      $('#player').keypress(function (e) {
+          if (e.which == 13) {
+              e.preventDefault();
+              $('#player_details').removeClass('hidden');
+          }
+      });
 
-            element = $('#player');
-            source = ["stuff", "that", "should", "be", "player", "names"];
+      element = $('#player');
+      element.typeahead();
 
-            connectTypeahead(element, source);
+      connectTypeahead(element, "/login/getUserNames.php?typed=",
+                       function (item) {
+                           $('#charity').attr('placeholder', item.charity_name);
+                       });
 
-            element = $('#charity');
-            source = ["test", "this", "code", "some", "more"];
+      element = $('#achievement');
+      element.typeahead();
 
-            connectTypeahead(element, source);
+      connectTypeahead(element, "/login/getCharities.php?typed=");
+
     </script>
 
   </body>
