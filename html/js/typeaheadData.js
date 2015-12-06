@@ -2,25 +2,23 @@ function connectTypeahead (element, source) {
     element.typeahead();
 
     element.keypress(function (e) {
-        connectTypeahead(element, source + element.val());
-    });
+        $.get(source + element.val(), function(data) {
+            var strings = [];
 
-    $.get(source, function(data) {
-        var strings = [];
+            data = JSON.parse(data);
 
-        data = JSON.parse(data);
+            if (data.charitySearchResults == null)
+                return;
 
-        if (data.charitySearchResults == null)
-            return;
+            data.charitySearchResults.forEach(function (e, i) {
+                strings[i] = e.charityDisplayName;
+            });
 
-        data.charitySearchResults.forEach(function (e, i) {
-            strings[i] = e.charityDisplayName;
+            console.log(strings);
+            console.log(element);
+            console.log(source);
+
+            element.data('typeahead').source = strings;
         });
-
-        console.log(strings);
-        console.log(element);
-        console.log(source);
-
-        element.data('typeahead').source = strings;
     });
 }
