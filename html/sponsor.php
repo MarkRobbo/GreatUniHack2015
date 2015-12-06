@@ -92,7 +92,7 @@
 
       element = $('#player');
       element.typeahead();
-
+'
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
@@ -109,7 +109,8 @@
                                      data.playerstats.achievements.forEach(
                                          function (e, i) {
                                              if (e.achieved === 0)
-                                                 temp.push(e.description);
+                                                 temp.push(e.name + ": "
+                                                           + e.description);
                                          });
 
                                      console.log(temp);
