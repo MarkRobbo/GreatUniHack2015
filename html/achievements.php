@@ -52,8 +52,6 @@
     $toUser = $db->getUserDetails($row['toUser']);
     echo '<td>' . $toUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
-    echo $row['completed'];
-    echo $row['paid'];
     if ($row['completed'] == 1)
     {
       echo '<td><a class="tick" href="javascript:void(0)"
@@ -73,7 +71,7 @@
                       <i class="glyphicon glyphicon-ok"></i>
                   </a></td>';
     } else {
-      if ($_row['completed'] == 0)
+      if ($row['completed'] == 0)
         echo '<td>Not Needed Yet</td>';
       else
         echo '<td><a href="' . $JGAPI->getDonationLink($toUser['charity_ID'], $row['amount'], $row['pledgeID'] . '">Donate Now!</a></td>');
