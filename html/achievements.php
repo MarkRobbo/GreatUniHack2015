@@ -87,21 +87,26 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-
-                <td>Osu!</td>
-                <td>Beat rrtyui's score in "Image Material"</td>
-                <td>derp</td>
-                <td>10.00</td>
-                <td><a class="tick" href="javascript:void(0)"
+<?php
+  foreach ($db->getChallengesMadeBy($_SESSION['steamID']) as $row)
+  {
+    echo '<tr>';
+    echo '<td>' . $steamAPI->getGameName($row['appID']) . '</td>';
+    echo '<td>' . $row['Achievement'] . '</td>';
+    $toUser = $db->getUserDetails($row['toUser']);
+    echo '<td>' . $toUser['name'] . '</td>';
+    echo '<td>' . $row['amount'] . '</td>';
+    echo '<td><a class="tick" href="javascript:void(0)"
                        title="Done">
                     <i class="glyphicon glyphicon-ok"></i>
-                </a></td>
-                <td><a class="cross" href="javascript:void(0)"
+                </a></td>';
+    echo '<td><a class="tick" href="javascript:void(0)"
                        title="Done">
                     <i class="glyphicon glyphicon-ok"></i>
-                </a></td>
-              </tr>
+                </a></td>';
+    echo '<tr>';
+  }
+?>
             </tbody>
           </table>
         </div>

@@ -58,7 +58,9 @@
           <p>We will check you have actually completed the achievement through Steam's API</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="images/present.png" alt="Gift" width="140" height="140">
+        	<a href="https://home.justgiving.com/">
+          	<img class="img-circle" src="images/present.png" alt="Gift" width="140" height="140">
+          </a>
           <h2>Everyone Wins!</h2>
           <p>The player gets to win donations for a well deserved charity of their choice and the challenger knows you definitely deserve it!</p>
           <p>Donations are handled and verified by <a href="https://home.justgiving.com/">Just Giving</a></p>
