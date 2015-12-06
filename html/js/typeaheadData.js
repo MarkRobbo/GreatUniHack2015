@@ -1,4 +1,4 @@
-function connectTypeahead (element, source) {
+function connectTypeahead (element, source, next) {
     element.typeahead();
 
     element.keypress(function (e) {
@@ -24,6 +24,8 @@ function connectTypeahead (element, source) {
             console.log(strings);
 
             element.data('typeahead').source = strings;
+
+            next(data);
         });
     });
 }

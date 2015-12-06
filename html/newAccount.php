@@ -23,11 +23,36 @@
         <p>To begin making or accepting challenges, please provide your email address:</p>
         <form action="newAccount.php" method="POST">
           Email:<br>
-          <input type="email" name="email">
+          <input type="email" name="email"></input>
+          <input type="text" id="charity" data-provide="typeahead"
+                 autocomplete="off" class="form-control"
+                 placeholder="Charity goal"></input>
+          <input class="hidden" id="charity_id">
           <input type="submit" value="Submit">
         </form>
       </div>
     </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap3-typeahead.min.js"></script>
+    <script src="/js/typeaheadData.js"></script>
+
+    <script type="text/javascript">
+      var element;
+      var source;
+
+      var hidden = $('#charity_id');
+
+      element = $('#charity');
+      connectTypeahead(element, "/login/getCharities.php?typed=",
+                       function (data) {
+                           console.log(hidden);
+                           console.log(data);
+      });
+
+    </script>
+
   </body>
 
 </html>
