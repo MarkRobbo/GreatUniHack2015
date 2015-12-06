@@ -139,6 +139,11 @@ ini_set("display_errors", 1);
                   element.typeahead();
                   element.data('typeahead').source = temp;
                   element.data('typeahead').updater = function (item) {
+
+                      item = data.response.games.find(function (e) {
+                          return e.name === item;
+                      });
+
                       console.log(item);
                       $('#game').val(item.name);
 
