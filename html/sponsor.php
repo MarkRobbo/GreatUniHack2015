@@ -69,7 +69,7 @@ ini_set("display_errors", 1);
                    id="game" placeholder=""></input>
           </div>
 
-          <input type="hidden" value="" name="appID" id="appID">
+          <input type="hidden" value="440" name="appID" id="appID">
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
@@ -101,45 +101,15 @@ ini_set("display_errors", 1);
                            <!---->
 
     <script type="text/javascript">
-                           var element;
-var source;
+    var element;
+    var source;
 
-function initGame (player) {
-    element = $('#game');
-    element.typahead();
-
-    $.get("/login/getUserGames.php?user=" + player,
-          function (data) {
-              var temp = [];
-
-              data = JSON.parse(data);
-
-              console.log(data);
-
-              data.response.games.forEach(
-                  function (e, i) {
-                      temp.push(e.name);
-                  });
-
-              console.log(temp);
-
-              element.typeahead();
-              element.data('typeahead').source = temp;
-          });
-}
-
-$('#player').keypress(function (e) {
-    if (e.which === 13) {
-        e.preventDefault();
-        $('#player_details').removeClass('hidden');
-    }
-});
-
-$('#game').keypress(function (e) {
-    if (e.which === 13) {
-        e.preventDefault();
-    }
-});
+    $('#player').keypress(function (e) {
+        if (e.which === 13) {
+            e.preventDefault();
+            $('#player_details').removeClass('hidden');
+        }
+    });
 
     element = $('#player');
     element.typeahead();
@@ -147,36 +117,33 @@ $('#game').keypress(function (e) {
                      function (item) {
                          $('#charity').attr('placeholder', item.charity_name);
                          $('#hidden_id').attr('value', item.steamID);
-                         initGame(player);
+
+                         $.get("/login/getUserAchievements.php?user="
+                               + item.steamID +
+                               "&game=" + $('#appID').attr('value'),
+                               function (data) {
+                                   console.log($('#appID').attr('value'));
+                                   var temp = [];
+
+                                   data = JSON.parse(data);
+
+                                   console.log(data);
+
+                                   data.playerstats.achievements.forEach(
+                                       function (e, i) {
+                                           if (e.achieved === 0)
+                                               temp.push(e.name + ": "
+                                                         + e.description);
+                                       });
+
+                                   console.log(temp);
+
+                                   element = $('#achievement');
+                                   element.typeahead();
+                                   element.data('typeahead').source = temp;
+                               });
                      });
 
-
-                           // $.get("/login/getUserAchievements.php?user="
-                           //       + item.steamID +
-                           //       "&game=" + $('#appID').attr('value'),
-                           //       function (data) {
-                           //           var temp = [];
-
-                           //           data = JSON.parse(data);
-
-                           //           console.log(data);
-
-                           //           data.playerstats.achievements.forEach(
-                           //               function (e, i) {
-                           //                   if (e.achieved === 0)
-                           //                       temp.push(e.name + ": "
-                           //                                 + e.description);
-                           //               });
-
-                           //           console.log(temp);
-
-                           //           element = $('#achievement');
-                           //           element.typeahead();
-                           //           element.data('typeahead').source = temp;
-                           //       });
-                           // $.get("/login/getUserGames.php?user=" + item.steamID)
-
-      });
     </script>
 
   </body>
