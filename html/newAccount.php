@@ -45,10 +45,11 @@
       var hidden = $('#charity_id');
 
       element = $('#charity');
-      element.typeahead();
-
-      element.on('typeahead:select', function (ev, suggestion) {
-          console.log(suggestion);
+      element.typeahead({
+              updater: function (item) {
+                  console.log(item);
+                  return item;
+              }
       });
 
       connectTypeahead(element, "/login/getCharities.php?typed=");
