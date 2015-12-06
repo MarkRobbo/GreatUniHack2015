@@ -111,6 +111,9 @@
                                              if (e.achieved === 0)
                                                  temp.push(e.description);
                                          });
+
+                                     console.log(temp);
+
                                      // element = $('#achievement');
                                      // element.typehead();
                                  });
