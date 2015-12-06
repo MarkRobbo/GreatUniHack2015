@@ -65,7 +65,7 @@
             <input type="text" data-provide="typeahead" name="achievement"
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
-                   placeholder="The achivement"></input>
+                   placeholder="The achievement"></input>
           </div>
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge
@@ -92,7 +92,7 @@
 
       element = $('#player');
       element.typeahead();
-
+'
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
@@ -114,8 +114,10 @@
 
                                      console.log(temp);
 
-                                     // element = $('#achievement');
-                                     // element.typehead();
+                                     element = $('#achievement');
+                                     element.typehead({
+                                         source: temp
+                                     });
                                  });
       });
 
