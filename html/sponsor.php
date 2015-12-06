@@ -110,6 +110,9 @@ ini_set("display_errors", 1);
               $('#appID').attr('value'), function (data) {
                   var temp = [];
 
+                  console.log($('#appID').attr('value'));
+                  console.log($('#hidden_id').attr('value'));
+
                   data = JSON.parse(data);
 
                   data.playerstats.achievements.forEach(function (e) {
@@ -137,8 +140,8 @@ ini_set("display_errors", 1);
                   element.typeahead();
                   element.data('typeahead').source = temp;
                   element.data('typeahead').updater = function (item) {
-                      $('#appID').val(item.appid);
                       $('#game').val(item.name);
+                      $('#appID').attr('value', item.appid);
 
                       initAchievements();
 
