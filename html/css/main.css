@@ -23,4 +23,5 @@ ul .nav .navbar-nav .navbar-right {
 
 .navbar-brand-text:hover {
     color: #fff;
+    text-decoration: none;
 }
