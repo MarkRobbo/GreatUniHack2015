@@ -42,7 +42,7 @@ ini_set("display_errors", 1);
           <form action="sponsor.php" method="POST" role="form" id="pledge">
             <div class="form-group">
               <label for="player">Player</label>
-              <input type="text" class="form-control" name="player"
+              <input type="text" class="form-control" name="player" required
                      id="player" placeholder="Player" autocomplete="off">
               </input>
             </div>
