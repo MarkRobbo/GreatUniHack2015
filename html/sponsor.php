@@ -6,8 +6,9 @@ ini_set("display_errors", 1);
 
    $db = new DB();
 
-$db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["game"],
-               $_POST["achievement"], $_POST["amount"]);
+   if ($_POST["amount"] > 0)
+    $db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["appID"],
+                    $_POST["achievement"], $_POST["amount"]);
 ?>
 <!DOCTYPE html>
 <html>
