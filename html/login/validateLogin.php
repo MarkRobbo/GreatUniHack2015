@@ -65,6 +65,7 @@
 					$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
 
 					// Store avatar and name
+					print_r($playerSummary);
 					$_SESSION['name'] = $playerSummary['personaname'];
 					$_SESSION['avatar'] = $playerSummary['avatarfull'];
 
