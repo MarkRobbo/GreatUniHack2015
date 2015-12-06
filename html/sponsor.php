@@ -120,7 +120,10 @@ ini_set("display_errors", 1);
                            element = $('#game');
                            $.get("/login/getUserGames.php?user=" + item.steamID,
                                  function (data) {
+                                     data = JSON.parse(json);
+
                                      console.log(data);
+
                                  });
 
 
