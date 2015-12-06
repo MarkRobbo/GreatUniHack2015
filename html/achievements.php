@@ -74,7 +74,7 @@
       if ($row['completed'] == 0)
         echo '<td>Not Needed Yet</td>';
       else
-        echo '<td><a href="' . $JGAPI->getDonationLink($toUser['charity_ID'], $row['amount'], $row['pledgeID'] . '">Donate Now!</a></td>');
+        echo '<td><a href="' . $JGAPI->getDonationLink($toUser['charity_ID'], $row['amount'], $row['pledgeID']) . '">Donate Now!</a></td>';
     }
     echo '</tr>';
   }
