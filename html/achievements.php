@@ -23,22 +23,28 @@
 
       <div class="row">
         <div class="col-md-12">
-          <table id="table" class="table table-hover" data-toggle="table">
-            <tr>
-              <th>Game</th>
-              <th>Achievement</th>
-              <th>Charity</th>
-              <th>Done?</th>
-            </tr>
-            <tr>
-              <td>Osu!</td>
-              <td>Beat rrtyui's score in "Image Material"</td>
-              <td>That cancer thing</td>
-              <td><a class="tick" href="javascript:void(0)"
-                     title="Done">
-                  <i class="glyphicon glyphicon-ok"></i>
-              </a></td>
-            </tr>
+          <table id="table" class="table table-hover"
+                 data-toggle="table">
+            <thead>
+              <tr>
+                <th>Game</th>
+                <th>Achievement</th>
+                <th>Charity</th>
+                <th>Done?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td>Osu!</td>
+                <td>Beat rrtyui's score in "Image Material"</td>
+                <td>That cancer thing</td>
+                <td><a class="tick" href="javascript:void(0)"
+                       title="Done">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </a></td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
