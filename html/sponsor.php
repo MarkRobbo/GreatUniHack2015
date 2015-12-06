@@ -69,7 +69,7 @@ ini_set("display_errors", 1);
                    id="game" placeholder=""></input>
           </div>
 
-          <input type="hidden" value="440" name="appID" id="appID">
+          <input type="hidden" value="" name="appID" id="appID">
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
@@ -110,6 +110,8 @@ ini_set("display_errors", 1);
               $('#appID').attr('value'), function (data) {
                   var temp = [];
 
+                  console.log($('#hidden_id').attr('value'));
+
                   data = JSON.parse(data);
 
                   data.playerstats.achievements.forEach(function (e) {
@@ -137,8 +139,12 @@ ini_set("display_errors", 1);
                   element.typeahead();
                   element.data('typeahead').source = temp;
                   element.data('typeahead').updater = function (item) {
-                      $('#appID').val(item.appid);
+                      console.log(item);
                       $('#game').val(item.name);
+
+                      console.log(item.appid);
+                      $('#appID').attr('value', item.appid);
+                      console.log($('#appID').attr('value'));
 
                       initAchievements();
 
