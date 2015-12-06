@@ -33,6 +33,14 @@ class DB
 		return $results_array;
 	}
 
+	// Updates the charity for a user
+	public function updateUserCharity($steamID, $charityID)
+	{
+		$update = $this->connection->prepare("UPDATE Users SET charity_ID = ? WHERE steamID = ?");
+		$update->bind_param("ss", $charityID, $steamID);
+		$update->execute();
+	}
+
 	// Get the database connection for use outside of the class
 	public function getConnection()
 	{
