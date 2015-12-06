@@ -124,6 +124,13 @@ ini_set("display_errors", 1);
               });
     }
 
+    function initGames () {
+        $.get("/login/getUserGames.php?user=" +
+              $('#hidden_id').attr('value'), function (data) {
+                  data = JSON.parse(data);
+                  console.log(data);
+              });
+    }
 
     $('#player').keypress(function (e) {
         if (e.which === 13) {
@@ -139,32 +146,9 @@ ini_set("display_errors", 1);
                          $('#charity').attr('placeholder', item.charity_name);
                          $('#hidden_id').attr('value', item.steamID);
 
-                         initAchievements();
+                         initGames();
 
-                         // $.get("/login/getUserAchievements.php?user="
-                         //       + item.steamID +
-                         //       "&game=" + $('#appID').attr('value'),
-                         //       function (data) {
-                         //           console.log($('#appID').attr('value'));
-                         //           var temp = [];
-
-                         //           data = JSON.parse(data);
-
-                         //           console.log(data);
-
-                         //           data.playerstats.achievements.forEach(
-                         //               function (e, i) {
-                         //                   if (e.achieved === 0)
-                         //                       temp.push(e.name + ": "
-                         //                                 + e.description);
-                         //               });
-
-                         //           console.log(temp);
-
-                         //           element = $('#achievement');
-                         //           element.typeahead();
-                         //           element.data('typeahead').source = temp;
-                         //       });
+                         // initAchievements();
                      });
 
     </script>
