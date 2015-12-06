@@ -50,7 +50,8 @@
         <div class="col-lg-4">
           <img class="img-circle" src="images/steam.png" alt="Play" width="140" height="140">
           <h2>Play</h2>
-          <p>Complete challenges given to you by others to secure the reward (or multiple rewards) for charity. We will check you have actually completed the achievement through Steam's API</p>
+          <p>Complete challenges given to you by others to secure the reward (or multiple rewards) for charity.</p>
+          <p>We will check you have actually completed the achievement through Steam's API</p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="images/present.png" alt="Gift" width="140" height="140">
