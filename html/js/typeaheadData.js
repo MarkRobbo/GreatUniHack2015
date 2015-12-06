@@ -3,8 +3,6 @@ function connectTypeahead (element, source, next) {
         $.get(source + element.val(), function(data) {
             var strings = [];
 
-            console.log(data);
-
             data = JSON.parse(data);
 
             if (data == null)
@@ -19,11 +17,10 @@ function connectTypeahead (element, source, next) {
                     strings[i] = e.name;
                 });
 
-            console.log(strings);
-
             element.data('typeahead').source = strings;
 
-            next(data);
+            if (next)
+                next(data);
         });
     });
 }
