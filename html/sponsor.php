@@ -69,7 +69,7 @@ ini_set("display_errors", 1);
                    id="game" placeholder=""></input>
           </div>
 
-          <input type="hidden" value="" name="appID" id="appID">
+          <input type="hidden" value="440" name="appID" id="appID">
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
@@ -117,6 +117,7 @@ ini_set("display_errors", 1);
                      function (item) {
                          $('#charity').attr('placeholder', item.charity_name);
                          $('#hidden_id').attr('value', item.steamID);
+
                          $.get("/login/getUserAchievements.php?user="
                                + item.steamID +
                                "&game=" + $('#appID').attr('value'),
