@@ -84,13 +84,11 @@ achieve in a video game."></input>
               $('#player_details').removeClass('hidden');
       });
 
-    element = $('#player');
-    <!-- source = ["stuff", "that", "should", "be", "player", "names"]; -->
+      element = $('#player');
+      connectTypeahead(element, "/login/getUserNames.php?typed=");
 
-    <!-- connectTypeahead(element, source); -->
-
-    element = $('#achievement');
-    connectTypeahead(element, "/login/getCharities.php?typed=");
+      element = $('#achievement');
+      connectTypeahead(element, "/login/getCharities.php?typed=");
 
     </script>
 
