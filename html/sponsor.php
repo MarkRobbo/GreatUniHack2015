@@ -82,8 +82,10 @@
       var source;
 
       $('#player').keypress(function (e) {
-          if (e.which == 13)
+          if (e.which == 13) {
+              e.preventDefault();
               $('#player_details').removeClass('hidden');
+      }
       });
 
       element = $('#player');
