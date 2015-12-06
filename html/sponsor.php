@@ -154,6 +154,11 @@ ini_set("display_errors", 1);
         }
     });
 
+    $('#gamer').keypress(function (e) {
+        if (e.which === 13)
+            e.preventDefault();
+    });
+
     element = $('#player');
     element.typeahead();
     connectTypeahead(element, "/login/getUserNames.php?typed=",
