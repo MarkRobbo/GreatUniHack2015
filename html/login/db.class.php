@@ -37,7 +37,7 @@ class DB
 	// Close the database connection when finished
 	function __destruct ()
 	{
-		$db->close();
+		$this->connection->close();
 	}
 }
 
