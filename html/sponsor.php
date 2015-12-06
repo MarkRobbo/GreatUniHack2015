@@ -4,7 +4,7 @@
 
    $db = new DB();
 
-$db->addPledge($_SESSION["steamID"], $_POST["player"], $_POST["game"],
+$db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["game"],
                $_POST["achievement"], $_POST["amount"]);
 ?>
 <!DOCTYPE html>
