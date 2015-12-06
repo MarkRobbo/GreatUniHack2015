@@ -18,7 +18,7 @@
 		// If the account is not activated yet, ask for their email
 		if (isset($_SESSION['steamID']) && $_SESSION['activated'] == false)
 		{
-			if ($atNewUserPage == true && isset($_POST['email']))
+			if ($atNewUserPage == true && isset($_POST['email']) && isset($_POST['charity_ID']))
 			{
 				// If we are already there and an email was provided, add 
 				// account to the database with details
@@ -31,7 +31,7 @@
 				// Create new user
 				include_once 'db.class.php';
 				$db = new DB();
-				$db->createUser($_SESSION['steamID'], $_POST['email'], $playerSummary['personaname']);
+				$db->createUser($_SESSION['steamID'], $_POST['email'], $playerSummary['personaname'], $_POST['charity_ID']);
 
 				// Update session variables
 				$_SESSION['email'] = $_POST['email'];
