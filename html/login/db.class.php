@@ -44,6 +44,14 @@ class DB
 		$update->execute();
 	}
 
+	// Add pledge
+	public function addPledge($fromUser, $toUser, $appID, $achievement)
+	{
+		$insert = $this->connection->prepare("INSERT INTO Pledges (fromUser, toUser, appID, Achievement) VALUES (?, ?, ?, ?)");
+		$insert->bind_param("ssss", $fromUser, $toUser, $appID, $achievement);
+		$insert->execute();
+	}
+
 	// Get the database connection for use outside of the class
 	public function getConnection()
 	{
