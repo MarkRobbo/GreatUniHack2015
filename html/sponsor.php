@@ -65,7 +65,7 @@
             <input type="text" data-provide="typeahead" name="achievement"
                    autocomplete="off" id="achievement" maxlength="160"
                    class="form-control"
-                   placeholder="The achivement"></input>
+                   placeholder="The achievement"></input>
           </div>
           <button type="submit" form="pledge" class="btn btn-primary">
             Pledge
