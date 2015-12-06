@@ -31,6 +31,7 @@
                 <th>Challenged</th>
                 <th>Bounty</th>
                 <th>Done?</th>
+                <th>Paid?</th>
               </tr>
             </thead>
             <tbody>
@@ -44,12 +45,18 @@
                        title="Done">
                     <i class="glyphicon glyphicon-ok"></i>
                 </a></td>
+                <td><a class="cross" href="javascript:void(0)"
+                       title="Done">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </a></td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
+    </div>
 
+    <div class="container">
       <div class="row">
         <h1 class="row page-header">Challenges Given to You</h1>
       </div>
@@ -64,6 +71,7 @@
                 <th>Challenged By</th>
                 <th>Bounty</th>
                 <th>Done?</th>
+                <th>Paid?</th>
               </tr>
             </thead>
             <tbody>
@@ -74,6 +82,10 @@
                 <td>derp</td>
                 <td>10.00</td>
                 <td><a class="tick" href="javascript:void(0)"
+                       title="Done">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </a></td>
+                <td><a class="cross" href="javascript:void(0)"
                        title="Done">
                     <i class="glyphicon glyphicon-ok"></i>
                 </a></td>
