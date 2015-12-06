@@ -97,45 +97,58 @@ ini_set("display_errors", 1);
     <script src="/js/bootstrap3-typeahead.min.js"></script>
     <script src="/js/typeaheadData.js"></script>
 
+<!--JSclearfix'-->
+                           <!---->
+
     <script type="text/javascript">
-      var element;
-      var source;
+                           var element;
+var source;
 
-      $('#player').keypress(function (e) {
-          if (e.which == 13) {
-              e.preventDefault();
-              $('#player_details').removeClass('hidden');
-          }
-      });
+function initGame (player) {
+    element = $('#game');
+    element.typahead();
 
-      element = $('#player');
-      element.typeahead();
-<!--JSFIX'-->
-      connectTypeahead(element, "/login/getUserNames.php?typed=",
-                       function (item) {
-                           $('#charity').attr('placeholder', item.charity_name);
-                           $('#hidden_id').attr('value', item.steamID);
+    $.get("/login/getUserGames.php?user=" + player,
+          function (data) {
+              var temp = [];
 
+              data = JSON.parse(data);
 
-                           element = $('#game');
-                           $.get("/login/getUserGames.php?user=" + item.steamID,
-                                 function (data) {
-                                     var temp = [];
+              console.log(data);
 
-                                     data = JSON.parse(data);
+              data.response.games.forEach(
+                  function (e, i) {
+                      temp.push(e.name);
+                  });
 
-                                     console.log(data);
+              console.log(temp);
 
-                                     data.response.games.forEach(
-                                         function (e, i) {
-                                             temp.push(e.name);
-                                         });
+              element.typeahead();
+              element.data('typeahead').source = temp;
+          });
+}
 
-                                     console.log(temp);
+$('#player').keypress(function (e) {
+    if (e.which === 13) {
+        e.preventDefault();
+        $('#player_details').removeClass('hidden');
+    }
+});
 
-                                     element.typeahead();
-                                     element.data('typeahead').source = temp;
-                                 });
+$('#game').keypress(function (e) {
+    if (e.which === 13) {
+        e.preventDefault();
+    }
+});
+
+    element = $('#player');
+    element.typeahead();
+    connectTypeahead(element, "/login/getUserNames.php?typed=",
+                     function (item) {
+                         $('#charity').attr('placeholder', item.charity_name);
+                         $('#hidden_id').attr('value', item.steamID);
+                         initGame(player);
+                     });
 
 
                            // $.get("/login/getUserAchievements.php?user="
