@@ -30,14 +30,6 @@ body {
     text-decoration: none;
 }
 
-.background-img {
-	filter: blur(2px);
-	-webkit-filter: blur(2px);
-	-moz-filter: blur(2px);
-	-o-filter: blur(2px);
-	-ms-filter: blur(2px);
-}
-
 .carousel-caption h1 {
 		font-weight: bold;
 		font-size: 50px;

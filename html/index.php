@@ -22,9 +22,7 @@
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-        	<div class="background-img">
-          	<img class="first-slide" src="images/slider.jpg" alt="Achievements">
-          </div>
+          <img class="first-slide" src="images/slider.jpg" alt="Achievements">
           <div class="container">
             <div class="carousel-caption">
               <h1>Complete Achievements For Charity</h1>
