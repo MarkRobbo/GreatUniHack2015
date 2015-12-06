@@ -52,6 +52,8 @@
     $toUser = $db->getUserDetails($row['toUser']);
     echo '<td>' . $toUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
+    echo $row['completed'];
+    echo $row['paid'];
     if ($row['completed'] == 1)
     {
       echo '<td><a class="tick" href="javascript:void(0)"
