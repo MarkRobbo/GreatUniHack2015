@@ -45,10 +45,10 @@ class DB
 	}
 
 	// Add pledge
-	public function addPledge($fromUser, $toUser, $appID, $achievement)
+	public function addPledge($fromUser, $toUser, $appID, $achievement, $amount)
 	{
-		$insert = $this->connection->prepare("INSERT INTO Pledges (fromUser, toUser, appID, Achievement) VALUES (?, ?, ?, ?)");
-		$insert->bind_param("ssss", $fromUser, $toUser, $appID, $achievement);
+		$insert = $this->connection->prepare("INSERT INTO Pledges (fromUser, toUser, appID, Achievement, amount) VALUES (?, ?, ?, ?, ?)");
+		$insert->bind_param("ssssd", $fromUser, $toUser, $appID, $achievement, $amount);
 		$insert->execute();
 	}
 
