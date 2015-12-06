@@ -120,11 +120,6 @@
                                      });
                                  });
       });
-
-      element = $('#achievement');
-      element.typeahead();
-
-      connectTypeahead(element, "/login/getCharities.php?typed=");
     </script>
 
   </body>
