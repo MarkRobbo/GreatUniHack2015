@@ -55,6 +55,6 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/bootstrap3-typeahead.min.js"></script>
     <script src="/js/typeaheadData.js"></script>
-    <script type="text/javacsript" src="/js/bootstrap-table.min.js"></script>
+    <script src="/js/bootstrap-table.min.js"></script>
   </body>
 </html>
