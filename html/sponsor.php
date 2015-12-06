@@ -17,7 +17,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6">
-          <h1 class="row page-header">Challenge Another Player</h1>
+          <h1 class="row page-header">Make a Challenge</h1>
         </div>
       </div>
 
@@ -39,9 +39,7 @@
 
       <div id="player_details" class="row hidden">
         <h5 class="col-md-12">
-          Now, specify exactly what your player should achieve to
-          receive your donation. The game and charity are chosen by
-          the player, but you can review them here.
+          Now choose the achievement you would like the player to complete to collect your bounty for charity:
         </h5>
 
         <div class="col-md-12">
