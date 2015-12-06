@@ -23,7 +23,8 @@
 		// Get the achievements for a particular user and game
 		public static function getAchievementDetails($steamID, $appID)
 		{
-			
+			$apiResponse = "http://api.steampowered.com/ISteamUserStats/GetPlayerAchievements/v0001/?appid=" . urlencode($appID) ."&key=" . self::API_KEY . "&steamid=" . urlencode($steamID) ."&format=json"
+			return json_decode($apiResponse, true);
 		}
 	}
 
