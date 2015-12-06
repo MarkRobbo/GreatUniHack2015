@@ -42,6 +42,7 @@
 
   $db = new DB();
   $steamAPI = new SteamAPI();
+  $JGAPI = new JustGivingAPI();
 
   foreach ($db->getChallengesMadeBy($_SESSION['steamID']) as $row)
   {
@@ -70,10 +71,10 @@
                       <i class="glyphicon glyphicon-ok"></i>
                   </a></td>';
     } else {
-      echo '<td><a class="cross" href="javascript:void(0)"
-                         title="No">
-                      <i class="glyphicon glyphicon-remove"></i>
-                  </a></td>';
+      if ($_row['completed'] == 0)
+        echo 'Not Needed Yet';
+      else
+        echo '<a href="' . $JGAPI->getDonationLink($toUser['charity_ID'], $row['amount'], $row['pledgeID'] . '">Donate Now!</a>');
     }
     echo '<tr>';
   }
