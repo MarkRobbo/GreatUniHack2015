@@ -17,7 +17,7 @@
 
     <div class="container">
       <div class="row">
-        <h1 class="row page-header"><?php echo $_SESSION['name']; ?></h1>
+        <h1 class="row page-header">User: <?php echo $_SESSION['name']; ?></h1>
       </div>
 
       <div class="row">
