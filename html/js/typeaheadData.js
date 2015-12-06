@@ -11,7 +11,7 @@ function connectTypeahead (element, source) {
         console.log(strings);
 
         element.typeahead({
-            source: ["Another", "Test"];
+            source: ["Another", "Test"]
         });
     });
 }
