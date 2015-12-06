@@ -37,7 +37,7 @@
 
     <!-- Marketing messaging and featurettes
     <!-- Wrap the rest of the page in another container to center all the content. -->
-
+		<div class="panel panel-default">
     <div class="container marketing">
 
       <!-- Three columns of text below the carousel -->
@@ -72,7 +72,7 @@
         <p class="pull-right"><a href="#">Back to top</a></p>
         <p>&copy; 2015 AchieveForGood &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
-
+		</div>
     </div><!-- /.container -->
 
 
