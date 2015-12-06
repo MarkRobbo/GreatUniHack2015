@@ -17,7 +17,7 @@ function connectTypeahead (element, source) {
                     strings[i] = e.charityDisplayName;
                 });
             else
-                strings = data;
+                strings = data.name;
 
             console.log(strings);
 
