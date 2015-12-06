@@ -8,5 +8,5 @@ $steamAPI = new SteamAPI();
 
 $res = $steamAPI->getAchievementDetails($user, $game);
 
-json_encode($res);
+echo json_encode($res);
 ?>
