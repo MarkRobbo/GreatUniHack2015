@@ -100,6 +100,14 @@ ini_set("display_errors", 1);
 <!--JSclearfix'-->
                            <!---->
 
+    function initAchievements () {
+        $.get("/login/getUserAchievements.php?user=" +
+              $('#hidden_id'.attr('value')) + '&game=' +
+              $('#appID').attr('value'), function (data) {
+                  console.log(data);
+              });
+    }
+
     <script type="text/javascript">
     var element;
     var source;
@@ -118,30 +126,32 @@ ini_set("display_errors", 1);
                          $('#charity').attr('placeholder', item.charity_name);
                          $('#hidden_id').attr('value', item.steamID);
 
-                         $.get("/login/getUserAchievements.php?user="
-                               + item.steamID +
-                               "&game=" + $('#appID').attr('value'),
-                               function (data) {
-                                   console.log($('#appID').attr('value'));
-                                   var temp = [];
+                         initAchievements();
 
-                                   data = JSON.parse(data);
+                         // $.get("/login/getUserAchievements.php?user="
+                         //       + item.steamID +
+                         //       "&game=" + $('#appID').attr('value'),
+                         //       function (data) {
+                         //           console.log($('#appID').attr('value'));
+                         //           var temp = [];
 
-                                   console.log(data);
+                         //           data = JSON.parse(data);
 
-                                   data.playerstats.achievements.forEach(
-                                       function (e, i) {
-                                           if (e.achieved === 0)
-                                               temp.push(e.name + ": "
-                                                         + e.description);
-                                       });
+                         //           console.log(data);
 
-                                   console.log(temp);
+                         //           data.playerstats.achievements.forEach(
+                         //               function (e, i) {
+                         //                   if (e.achieved === 0)
+                         //                       temp.push(e.name + ": "
+                         //                                 + e.description);
+                         //               });
 
-                                   element = $('#achievement');
-                                   element.typeahead();
-                                   element.data('typeahead').source = temp;
-                               });
+                         //           console.log(temp);
+
+                         //           element = $('#achievement');
+                         //           element.typeahead();
+                         //           element.data('typeahead').source = temp;
+                         //       });
                      });
 
     </script>
