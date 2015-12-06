@@ -3,7 +3,7 @@ function connectTypeahead (element, source) {
         var strings = [];
 
         data = JSON.parse(data);
-        [].forEach.call(data, function (e, i) {
+        data.charitySearchResults.forEach(data, function (e, i) {
             string[i] = e.charityDisplayName;
         });
 
