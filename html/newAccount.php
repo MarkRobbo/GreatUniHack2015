@@ -44,21 +44,9 @@
       var temp;
 
       var hidden = $('#charity_id');
+      var element = $('#charity');
 
-      element = $('#charity');
-      element.typeahead({
-              updater: function (item) {
-                  console.log(item);
-
-                  $.get("/login/getCharities.php?typed=" + element.val(),
-                        function (data) {
-                            console.log(data);
-                        });
-
-                  hidden.val();
-                  return item;
-              }
-      });
+      element.typeahead();
 
       connectTypeahead(element, "/login/getCharities.php?typed=");
     </script>
