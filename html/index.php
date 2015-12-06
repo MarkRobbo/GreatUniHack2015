@@ -7,7 +7,6 @@
     <?php
        include('header.html');
     ?>
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <title>AchieveForGood | Sponsor others to complete game achievements</title>
 
   </head>
