@@ -111,9 +111,8 @@ ini_set("display_errors", 1);
                   var temp = [];
 
                   data = JSON.parse(data);
-                  console.log(data);
 
-                  data.playerstats.achievements.forEach(function (e, i) {
+                  data.playerstats.achievements.forEach(function (e) {
                       if (e.achieved === 0)
                           temp.push(e.name + ": " + e.description);
                   });
@@ -127,8 +126,24 @@ ini_set("display_errors", 1);
     function initGames () {
         $.get("/login/getUserGames.php?user=" +
               $('#hidden_id').attr('value'), function (data) {
+                  var temp = [];
                   data = JSON.parse(data);
-                  console.log(data);
+
+                  data.response.games.forEach(function (e) {
+                      temp.push(e.name);
+                  });
+
+                  element = $('#game');
+                  element.typeahead();
+                  element.data('typeahead').source = temp;
+                  element.data('typeahead').updater = function (item) {
+                      $('#appID').attr('value', item.appid);
+                      $('#game').val(item.name);
+
+                      initAchievements();
+
+                      return item;
+                  }
               });
     }
 
