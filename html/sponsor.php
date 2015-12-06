@@ -6,7 +6,7 @@ ini_set("display_errors", 1);
 
    $db = new DB();
 
-   if ($_POST["amount"] > 0)
+   if ($_POST["amount"] > 1.99 && $_POST["amount"] < 100000.01)
     $db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["appID"],
                     $_POST["achievement"], $_POST["amount"]);
 ?>
