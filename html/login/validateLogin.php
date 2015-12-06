@@ -56,11 +56,22 @@
 				// Check if the user exists already
 				if ($result = $db->query("SELECT email FROM Users WHERE steamID=$loginAttempt")) 
 				{
+					// Store steam ID
+					$_SESSION['steamID'] = $loginAttempt;
+
+					// Get more information about the player
+					include_once "SteamAPI.class.php";
+					$steamAPI = new SteamAPI();
+					$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
+
+					// Store avatar and name
+					$_SESSION['name'] = $playerSummary['personaname'];
+					$_SESSION['avatar'] = $playerSummary['avatarfull'];
+
 					if ($result->num_rows < 1)
 					{
 						// If account doesn't exist, we need to request their email to
 						// create their account (to be implemented)
-						$_SESSION['steamID'] = $loginAttempt;
 
 						// This email isn't activated yet, we don't have the user in the database
 						$_SESSION['activated'] = false;
@@ -78,15 +89,6 @@
 
 						// Store the steam ID in the session variable
 						$_SESSION['steamID'] = $loginAttempt;
-
-						// Get more information about the player
-						include_once "SteamAPI.class.php";
-						$steamAPI = new SteamAPI();
-						$playerSummary = $steamAPI->getPlayerInfo($loginAttempt);
-
-						// Store avatar and name
-						$_SESSION['name'] = $playerSummary['personaname'];
-						$_SESSION['avatar'] = $playerSummary['avatarfull'];
 
 						// Now we need to redirect back
 						header('location: /');
