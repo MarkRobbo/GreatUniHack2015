@@ -43,6 +43,8 @@ $db->addPledge($_SESSION["steamID"], $_POST["player"], $_POST["game"],
                      id="player" placeholder="Player" autocomplete="off">
               </input>
             </div>
+
+            <input type="hidden" name="hidden_id" id="hidden_id">
         </div>
       </div>
 
@@ -105,10 +107,11 @@ $db->addPledge($_SESSION["steamID"], $_POST["player"], $_POST["game"],
 
       element = $('#player');
       element.typeahead();
-
+'
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
+                           $('#hidden_id').attr('value', item.steamID);
                            $.get("/login/getUserAchievements.php?user="
                                  + item.steamID +
                                  "&game=" + $('#appID').attr('value'),
