@@ -30,6 +30,19 @@
               <div class="btn btn-default">Logout</div>
             </a>
           </div>
+
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="charity">Charity:
+            </label>
+            <input type="text" class="form-control"
+                   data-provide="typeahead" autocomplete="off"
+                   id="charity" placeholder="Charity"></input>
+          </div>
+          <button type="submit" form="settings" class="btn btn-primary">
+            Submit
+          </button>
+        </div>
         </div>
       </div>
     </div>
