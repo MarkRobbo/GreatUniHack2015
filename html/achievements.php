@@ -48,8 +48,8 @@
     echo '<tr>';
     echo '<td>' . $steamAPI->getGameName($row['appID']) . '</td>';
     echo '<td>' . $row['Achievement'] . '</td>';
-    $fromUser = $db->getUserDetails($row['fromUser']);
-    echo '<td>' . $fromUser['name'] . '</td>';
+    $toUser = $db->getUserDetails($row['toUser']);
+    echo '<td>' . $toUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
     if ($row['completed'] == 1)
     {
@@ -109,8 +109,8 @@
     echo '<tr>';
     echo '<td>' . $steamAPI->getGameName($row['appID']) . '</td>';
     echo '<td>' . $row['Achievement'] . '</td>';
-    $toUser = $db->getUserDetails($row['toUser']);
-    echo '<td>' . $toUser['name'] . '</td>';
+    $fromUser = $db->getUserDetails($row['fromUser']);
+    echo '<td>' . $fromUser['name'] . '</td>';
     echo '<td>' . $row['amount'] . '</td>';
     if ($row['completed'] == 1)
     {
