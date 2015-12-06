@@ -40,18 +40,18 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <label for="charity">Charity</label>
-        <input type="text" id="charity"
-               class="form-control" placeholder="" disabled></input>
-      </div>
-
       <div id="player_details" class="row hidden">
         <h5 class="col-md-12">
           Now choose the achievement you would like the player to complete to collect your bounty for charity:
         </h5>
 
         <div class="col-md-12">
+          <div class="form-group">
+            <label for="charity">Charity</label>
+            <input type="text" id="charity"
+                   class="form-control" placeholder="" disabled></input>
+          </div>
+
           <div class="form-group">
             <label for="game">Game</label>
             <input type="text" class="form-control"
