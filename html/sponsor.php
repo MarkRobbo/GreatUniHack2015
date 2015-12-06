@@ -100,6 +100,10 @@ ini_set("display_errors", 1);
 <!--JSclearfix'-->
                            <!---->
 
+    <script type="text/javascript">
+    var element;
+    var source;
+
     function initAchievements () {
         $.get("/login/getUserAchievements.php?user=" +
               $('#hidden_id'.attr('value')) + '&game=' +
@@ -108,9 +112,6 @@ ini_set("display_errors", 1);
               });
     }
 
-    <script type="text/javascript">
-    var element;
-    var source;
 
     $('#player').keypress(function (e) {
         if (e.which === 13) {
