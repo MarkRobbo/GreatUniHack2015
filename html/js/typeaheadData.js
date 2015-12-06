@@ -12,7 +12,7 @@ function connectTypeahead (element, source) {
             if (data == null)
                 return;
 
-            if (data.charitySearchResults !== null)
+            if (data.charitySearchResults !== undefined)
                 data.charitySearchResults.forEach(function (e, i) {
                     strings[i] = e.charityDisplayName;
                 });
