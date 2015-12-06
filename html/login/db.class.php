@@ -21,9 +21,10 @@ class DB
 	}
 
 	// Get an associative array with all the user names
-	public function getUsers()
+	public function getUsers($like)
 	{
-		$query = "SELECT name FROM Users";
+		$this->connection->real_escape_string($like);
+		$query = "SELECT name FROM Users WHERE name LIKE '%" . $like . "%'";
 		$result = $this->connection->query($query);
 		return $result->fetch_assoc();
 	}
