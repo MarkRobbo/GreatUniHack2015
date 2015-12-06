@@ -2,9 +2,7 @@
 	session_start();
 
 	error_reporting(E_ERROR); // reports all errors
-ini_set("display_errors", "1"); // shows all errors
-ini_set("log_errors", 1);
-ini_set("error_log", "/tmp/php-error.log");
+	ini_set("display_errors", "1"); // shows all errors
 
 	include_once "SteamSignIn.class.php";
 	$steamSignIn = new SteamSignIn();
@@ -12,6 +10,7 @@ ini_set("error_log", "/tmp/php-error.log");
 	// Option to logout
 	if (isset($_GET['logout']))
 	{
+		$_SESSION = array();
 		session_destroy();
 	}
 	else
