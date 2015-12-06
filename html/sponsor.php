@@ -63,10 +63,10 @@ $db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["game"],
           <div class="form-group">
             <label for="game">Game</label>
             <input type="text" class="form-control" name="game"
-                   id="game" placeholder="Team Fortress 2" disabled></input>
+                   id="game" placeholder=""></input>
           </div>
 
-          <input type="hidden" value="440" name="appID" id="appID">
+          <input type="hidden" value="" name="appID" id="appID">
 
           <div class="form-group">
             <label for="achievement">Achievement</label>
@@ -107,34 +107,45 @@ $db->addPledge($_SESSION["steamID"], $_POST["hidden_id"], $_POST["game"],
 
       element = $('#player');
       element.typeahead();
-
+<!--JSFIX'-->
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
                            $('#hidden_id').attr('value', item.steamID);
-                           $.get("/login/getUserAchievements.php?user="
-                                 + item.steamID +
-                                 "&game=" + $('#appID').attr('value'),
-                                 function (data) {
-                                     var temp = [];
 
-                                     data = JSON.parse(data);
 
-                                     console.log(data);
+                           element = $('#game');
+                           $get("/login/getUserGanes.php?user=" + item.steamID,
+                                function (data)) {
+                               console.log(data);
+                           };
 
-                                     data.playerstats.achievements.forEach(
-                                         function (e, i) {
-                                             if (e.achieved === 0)
-                                                 temp.push(e.name + ": "
-                                                           + e.description);
-                                         });
 
-                                     console.log(temp);
+                           // $.get("/login/getUserAchievements.php?user="
+                           //       + item.steamID +
+                           //       "&game=" + $('#appID').attr('value'),
+                           //       function (data) {
+                           //           var temp = [];
 
-                                     element = $('#achievement');
-                                     element.typeahead();
-                                     element.data('typeahead').source = temp;
-                                 });
+                           //           data = JSON.parse(data);
+
+                           //           console.log(data);
+
+                           //           data.playerstats.achievements.forEach(
+                           //               function (e, i) {
+                           //                   if (e.achieved === 0)
+                           //                       temp.push(e.name + ": "
+                           //                                 + e.description);
+                           //               });
+
+                           //           console.log(temp);
+
+                           //           element = $('#achievement');
+                           //           element.typeahead();
+                           //           element.data('typeahead').source = temp;
+                           //       });
+                           // $.get("/login/getUserGames.php?user=" + item.steamID)
+
       });
     </script>
 
