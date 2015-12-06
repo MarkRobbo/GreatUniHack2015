@@ -41,6 +41,7 @@
     <script type="text/javascript">
       var element;
       var source;
+      var temp;
 
       var hidden = $('#charity_id');
 
@@ -48,6 +49,13 @@
       element.typeahead({
               updater: function (item) {
                   console.log(item);
+
+                  $.get("/login/getCharities.php?typed=" + element.val(),
+                        function (data) {
+                            console.log(data);
+                        });
+
+                  hidden.val();
                   return item;
               }
       });
