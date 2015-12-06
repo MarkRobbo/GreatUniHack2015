@@ -108,8 +108,19 @@ ini_set("display_errors", 1);
         $.get("/login/getUserAchievements.php?user=" +
               $('#hidden_id').attr('value') + '&game=' +
               $('#appID').attr('value'), function (data) {
+                  var temp = [];
 
+                  data = JSON.parse(data);
                   console.log(data);
+
+                  data.playerstats.achievements.forEach(function (e, i) {
+                      if (e.achieved === 0)
+                          temp.push(e.name + ": " + e.description);
+                  });
+
+                  element = $('#achievement');
+                  element.typeahead();
+                  element.data('typeahead').source = temp;
               });
     }
 
