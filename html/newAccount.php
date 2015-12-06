@@ -45,6 +45,12 @@
       var hidden = $('#charity_id');
 
       element = $('#charity');
+      element.typeahead();
+
+      element.bind('typeahead:select', function (ev, suggestion) {
+          console.log(suggestion);
+      });
+
       connectTypeahead(element, "/login/getCharities.php?typed=",
                        function (data) {
                            var id = data.charitySearchResults.find(function(e) {
@@ -53,7 +59,7 @@
 
                            console.log(element.val());
                            console.log(id);
-                           hidden.val(id);
+                           hidden.val(id.charityId);
       });
 
     </script>

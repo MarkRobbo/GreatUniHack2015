@@ -85,9 +85,13 @@ achieve in a video game."></input>
       });
 
       element = $('#player');
+      element.typeahead();
+
       connectTypeahead(element, "/login/getUserNames.php?typed=");
 
       element = $('#achievement');
+      element.typeahead();
+
       connectTypeahead(element, "/login/getCharities.php?typed=");
 
     </script>

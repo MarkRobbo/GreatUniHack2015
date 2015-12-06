@@ -1,7 +1,5 @@
 function connectTypeahead (element, source, next) {
-    element.typeahead();
-
-    element.change(function (e) {
+    element.keypress(function (e) {
         $.get(source + element.val(), function(data) {
             var strings = [];
 
