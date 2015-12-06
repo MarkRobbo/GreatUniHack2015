@@ -92,7 +92,7 @@
 
       element = $('#player');
       element.typeahead();
-
+'
       connectTypeahead(element, "/login/getUserNames.php?typed=",
                        function (item) {
                            $('#charity').attr('placeholder', item.charity_name);
@@ -101,7 +101,7 @@
                                  + item.steamID +
                                  "&game=" + $('#appID').attr('value'),
                                  function (data) {
-                                     console.log(data);
+                                     data = JSON.parse(data);
 
                                      // element = $('#achievement');
                                      // element.typehead();
