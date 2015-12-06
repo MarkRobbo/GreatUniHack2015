@@ -13,20 +13,24 @@ class DB
 	}
 
 	// Create a new user
-	public function createUser($steamID, $email, $name)
+	public function createUser($steamID, $email, $name, $charityID)
 	{
-		$insert = $this->connection->prepare("INSERT INTO Users (steamID, email, name) VALUES (?, ?, ?)");
-		$insert->bind_param("sss", $steamID, $email, $name);
+		$insert = $this->connection->prepare("INSERT INTO Users (steamID, email, name, charity_ID) VALUES (?, ?, ?, ?)");
+		$insert->bind_param("sss", $steamID, $email, $name, $charityID);
 		$insert->execute();
 	}
 
-	// Get an associative array with all the user names
+	// Get an associative array with all the user names, steam ID and charity ID that match
 	public function getUsers($like)
 	{
 		$this->connection->real_escape_string($like);
-		$query = "SELECT name, steamID FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
+		$query = "SELECT name, steamID, charity_ID FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
 		$result = $this->connection->query($query);
-		return $result->fetch_all();
+		$results_array = array();
+		while ($row = $result->fetch_assoc()) {
+		  $results_array[] = $row;
+		}
+		return $results_array;
 	}
 
 	// Get the database connection for use outside of the class
