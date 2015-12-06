@@ -16,7 +16,7 @@ class DB
 	public function createUser($steamID, $email, $name, $charityID)
 	{
 		$insert = $this->connection->prepare("INSERT INTO Users (steamID, email, name, charity_ID) VALUES (?, ?, ?, ?)");
-		$insert->bind_param("sss", $steamID, $email, $name, $charityID);
+		$insert->bind_param("ssss", $steamID, $email, $name, $charityID);
 		$insert->execute();
 	}
 
