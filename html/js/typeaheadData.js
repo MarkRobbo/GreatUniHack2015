@@ -1,5 +1,9 @@
 function connectTypeahead (element, source) {
-    element.typeahead({
-        source: source
+    $.get(source, function(data) {
+        data = JSON.parse(data);
+
+        element.typeahead({
+            source: data
+        });
     });
 }
