@@ -38,8 +38,10 @@
                 <td>Osu!</td>
                 <td>Beat rrtyui's score in "Image Material"</td>
                 <td>That cancer thing</td>
-                <td><input type="checkbox" aria-label="Done?"
-                           class="form-control"></td>
+                <td><a class="tick" href="javascript:void(0)"
+                       title="Done">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </a></td>
               </tr>
             </table>
           </div>
