@@ -12,6 +12,8 @@
 	{
 		$_SESSION = array();
 		session_destroy();
+
+		header('location: /');
 	}
 	else
 	{
@@ -36,6 +38,8 @@
 				// Update session variables
 				$_SESSION['email'] = $_POST['email'];
 				$_SESSION['activated'] = true;
+
+				header('location: /');
 			}
 			if (!$atNewUserPage && basename($_SERVER['PHP_SELF']) != 'index.php')
 			{
