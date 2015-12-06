@@ -100,9 +100,19 @@
                                  + item.steamID +
                                  "&game=" + $('#appID').attr('value'),
                                  function (data) {
+                                     var temp;
+
                                      data = JSON.parse(data);
 
                                      console.log(data);
+
+                                     data.playerstats.achievements.forEach(
+                                         function (e, i) {
+                                             if (e.achieved === 0)
+                                                 temp.push(e.description);
+                                         });
+
+                                     console.log(temp);
 
                                      // element = $('#achievement');
                                      // element.typehead();
