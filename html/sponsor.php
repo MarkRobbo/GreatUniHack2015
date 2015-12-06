@@ -121,7 +121,7 @@ ini_set("display_errors", 1);
                                + item.steamID +
                                "&game=" + $('#appID').attr('value'),
                                function (data) {
-                                   console.log(data);
+                                   console.log(item.steamID);
                                    var temp = [];
 
                                    data = JSON.parse(data);
