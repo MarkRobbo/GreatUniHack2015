@@ -8,6 +8,7 @@
        include('header.html');
     ?>
     <title>Achievements</title>
+    <link rel="stylesheet" href="/css/bootstrap-table.min.css"></link>
   </head>
 
   <body>
@@ -49,5 +50,7 @@
       </div>
 
     </div>
+
+    <script type="text/javacsript" src="/js/bootstrap-table.min.js"></script>
   </body>
 </html>
