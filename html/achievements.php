@@ -28,7 +28,7 @@
               All achievements that have been requested are listed
               here. If you complete one, tick it!
             </div>
-            <table class="table table-hover" data-toggle="table">
+            <table id="table" class="table table-hover" data-toggle="table">
               <tr>
                 <th>Game</th>
                 <th>Achievement</th>
