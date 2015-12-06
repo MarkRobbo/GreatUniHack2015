@@ -48,7 +48,10 @@
 
       element.typeahead();
 
-      connectTypeahead(element, "/login/getCharities.php?typed=");
+      connectTypeahead(element, "/login/getCharities.php?typed=",
+                       function (item) {
+                           hidden.val(item.charityId);
+                       });
     </script>
 
   </body>
