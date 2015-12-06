@@ -26,7 +26,11 @@ class DB
 		$this->connection->real_escape_string($like);
 		$query = "SELECT name, steamID FROM Users WHERE name LIKE '%" . $like . "%' LIMIT 10";
 		$result = $this->connection->query($query);
-		return $result->fetch_all();
+		$results_array = array();
+		while ($row = $result->fetch_assoc()) {
+		  $results_array[] = $row;
+		}
+		return $results_array;
 	}
 
 	// Get the database connection for use outside of the class
